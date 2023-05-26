@@ -1,38 +1,41 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import usePageHead from './hooks/usePageHead'
+import IndexStyle from './css/app.module.css'
+import Logo from './assets/logo.svg'
+import HeroImg from './assets/hero-img.png'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+    usePageHead("Home | ULES Voting app", "the voting app for ULES");
   return (
-    <>
-        <nav>
-            <Link to="/vote">Vote</Link>
-        </nav>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className={IndexStyle.body}>
+          <nav>
+              <Link to="/">
+                  <img src={Logo} alt="logo of ULES voting app" />
+              </Link>
+          </nav>
+          <main>
+              <header className={IndexStyle.header}>
+                  <h2>Faculty of Engineering Awards Night</h2>
+                  <h1>
+                      <span>
+                          Join the Action : Vote for your <strong>Faculty Awards Dinner</strong> Winners
+                      </span>
+                  </h1>
+                  <p>Vote for your favorite contestants in the various categories</p>
+                  <div className={IndexStyle.desktopCTAs}>
+                      <button className={IndexStyle.voteCTA}>Vote now</button>
+                      <button className={IndexStyle.donateCTA}>Donate now</button>
+                  </div>
+              </header>
+              <figure className={IndexStyle.figure}>
+                  <img src={HeroImg} alt="" />
+              </figure>
+              <div className={IndexStyle.mobileCTAs}>
+                  <button className={IndexStyle.voteCTA}>Vote now</button>
+                  <button className={IndexStyle.donateCTA}>Donate now</button>
+              </div>
+          </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
   )
 }
 
