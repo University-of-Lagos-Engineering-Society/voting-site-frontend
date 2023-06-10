@@ -1,11 +1,13 @@
 "use client";
 import { useState } from "react";
 import SocialiteOfTheYear from "@/components/undergrad/SocialiteOfTheYear";
+import RookieOfTheYear from "@/components/undergrad/RookieOfTheYear";
 import Link from "next/link";
 
 const UndergraduateCategory = () => {
   const [index, setIndex] = useState(0);
   const [socialiteOfTheYear, setSocialiteOfTheYear] = useState("");
+  const [rookieOfTheYear, setRookieOfTheYear] = useState("");
   
 
   return (
@@ -24,6 +26,14 @@ const UndergraduateCategory = () => {
               setIndex={setIndex}
               candidate={socialiteOfTheYear}
               setCandidate={setSocialiteOfTheYear}
+            />
+          )}
+          {index === 1 && (
+            <RookieOfTheYear
+              index={index}
+              setIndex={setIndex}
+              candidate={rookieOfTheYear}
+              setCandidate={setRookieOfTheYear}
             />
           )}
         </div>

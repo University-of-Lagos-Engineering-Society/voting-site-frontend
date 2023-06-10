@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useGetSocialiteOfTheYearQuery } from "@/redux/slices/undergrad";
+import { useGetRookieOfTheYearQuery } from "@/redux/slices/undergrad";
 
 export interface FormProps {
   index: number;
@@ -9,20 +9,25 @@ export interface FormProps {
   setIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const SocialiteOfTheYear = ({ index, candidate, setCandidate, setIndex }: FormProps) => {
-  const { data, isLoading, isError } = useGetSocialiteOfTheYearQuery();
+const RookieOfTheYear = ({
+  index,
+  candidate,
+  setCandidate,
+  setIndex,
+}: FormProps) => {
+  const { data, isLoading, isError } = useGetRookieOfTheYearQuery();
   if (isLoading) return <div>Loading...</div>;
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
       <div className="mb-20">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
-          Award : Socialite of the Year
+          Award : Rookie of the Year
         </h1>
       </div>
 
       <div>
         <p className="work-sans text-xl lg:text-2xl">
-          Cast your vote for the Socialite of the Year
+          Cast your vote for the Rookie of the Year
         </p>
         <p className="work-sans italic text-sm">
           You can only select one option.
@@ -39,7 +44,7 @@ const SocialiteOfTheYear = ({ index, candidate, setCandidate, setIndex }: FormPr
               name={c.name}
               handleClick={() => {
                 setCandidate(c.name);
-                setIndex(index + 1);
+                // setIndex(index + 1);
               }}
             />
           ))}
@@ -49,7 +54,7 @@ const SocialiteOfTheYear = ({ index, candidate, setCandidate, setIndex }: FormPr
   );
 };
 
-export default SocialiteOfTheYear;
+export default RookieOfTheYear;
 
 interface CardProps {
   index: number;
@@ -69,9 +74,7 @@ const Card = ({ index, candidate, name, handleClick }: CardProps) => {
       <div className="border py-1 px-3 flex items-center rounded-lg">
         {index + 1}.
       </div>
-      <div className="">
-        {name}
-      </div>
+      <div className="">{name}</div>
       <div
         onClick={_handleClick}
         className={`border
