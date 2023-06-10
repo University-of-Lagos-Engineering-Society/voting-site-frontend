@@ -24,13 +24,24 @@ body {
 .ls {
   line-height: 23px;
   font-weight: 300;
-    letter-spacing: 0.045em;
-    font-variant: all-small-caps;
+  letter-spacing: 0.045em;
+  font-variant: all-small-caps;
 }
 
 .sub-title {
   font-family: 'Work Sans';
-    font-style: normal;
-    font-weight: 400;
-    line-height: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+.sub-2 {
+  line-height: 28px;
+  letter-spacing: 0.045em;
+}
+
+.bg-card {
+  background: rgba(31, 31, 31, 0.72);
+  backdrop-filter: blur(7.5px);
+  border-radius: 8px;
 }

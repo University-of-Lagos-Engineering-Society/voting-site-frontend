@@ -18,7 +18,7 @@ export default function Home() {
 
         {/* Hero, text and Image side by side */}
         <section className="relative flex gap-6 flex-col lg:flex-row w-full max-w-7xl mx-auto">
-          <div className="w-full lg:w-[60%] flex flex-col gap-4 lg:gap-6 items-start pt-8 lg:pt-32">
+          <div className="w-full lg:w-[60%] flex flex-col gap-4 lg:gap-6 items-start pt-8 lg:pt-32 z-20">
             <h3 className="work-sans uppercase ls lg:text-2xl">
               Faculty of Engineering Awards Night
             </h3>
@@ -33,7 +33,7 @@ export default function Home() {
 
             <div className="hidden md:flex flex-col md:flex-row gap-4 w-full md:w-[65%] md:mx-auto lg:w-full lg:mx-0 sm:py-6 lg:py-0">
               <Link
-                href="/"
+                href="/categories"
                 className="w-full lg:w-fit bg-[#c7291f] text-white font-bold rounded-full flex justify-center items-center gap-1 px-12 py-3"
               >
                 Vote now
@@ -47,9 +47,9 @@ export default function Home() {
             </div>
           </div>
           {/* Mobile Buttons */}
-          <div className="flex flex-col md:hidden gap-4 w-full md:w-[65%] md:mx-auto lg:w-full lg:mx-0 py-6">
+          <div className="z-20 flex flex-col md:hidden gap-4 w-full md:w-[65%] md:mx-auto lg:w-full lg:mx-0 py-6">
             <Link
-              href="/"
+              href="/categories"
               className="w-full lg:w-fit bg-[#c7291f] text-white font-bold rounded-full flex justify-center items-center gap-1 px-12 py-3"
             >
               Vote now
