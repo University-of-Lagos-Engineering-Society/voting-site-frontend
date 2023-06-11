@@ -147,7 +147,9 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-Tech personality of the year(Male)";
+          return (
+            nominee.category.name === "U-Tech personality of the year(Male)"
+          );
         });
       },
     }),
@@ -162,7 +164,9 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-Tech personality of the year(Female)";
+          return (
+            nominee.category.name === "U-Tech personality of the year(Female)"
+          );
         });
       },
     }),
@@ -207,7 +211,10 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-ULES sport personality of the year(Male)";
+          return (
+            nominee.category.name ===
+            "U-ULES sport personality of the year(Male)"
+          );
         });
       },
     }),
@@ -222,14 +229,18 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-ULES sport personality of the year(Female)";
+          return (
+            nominee.category.name ===
+            "U-ULES sport personality of the year(Female)"
+          );
         });
       },
-    })
+    }),
   }),
 });
 
-export const { useGetSocialiteOfTheYearQuery,
+export const {
+  useGetSocialiteOfTheYearQuery,
   useGetLifeOfThePartyQuery,
   useGetCliqueOfTheYearQuery,
   useGetCreativeOfTheYearQuery,
@@ -243,5 +254,5 @@ export const { useGetSocialiteOfTheYearQuery,
   useGetTechPersonalityOfTheYearFemaleQuery,
   useGetTechPersonalityOfTheYearMaleQuery,
   useGetULESSportPersonalityOfTheYearFemaleQuery,
-  useGetULESSportPersonalityOfTheYearMaleQuery
+  useGetULESSportPersonalityOfTheYearMaleQuery,
 } = undergradApi;

@@ -1,14 +1,38 @@
 "use client";
 import { useState } from "react";
 import SocialiteOfTheYear from "@/components/undergrad/SocialiteOfTheYear";
-import RookieOfTheYear from "@/components/general/RookieOfTheYear";
 import Link from "next/link";
+import LifeOfTheParty from "@/components/undergrad/LifeOfTheParty";
 
 const UndergraduateCategory = () => {
   const [index, setIndex] = useState(0);
-  const [socialiteOfTheYear, setSocialiteOfTheYear] = useState("");
-  const [rookieOfTheYear, setRookieOfTheYear] = useState("");
-  
+  const [socialiteOfTheYear, setSocialiteOfTheYear] = useState(null);
+  const [lifeOfTheParty, setLifeOfTheParty] = useState(null);
+  /**
+   * 
+   * BIOLA
+  useGetCliqueOfTheYearQuery,
+  useGetCreativeOfTheYearQuery,
+  useGetEmergingEntrepreneurQuery,
+    useGetMostInfluentialQuery,
+  useGetMostPopularQuery,
+
+
+
+  TONI
+  useGetMostBeautifulQuery,
+  useGetMostFashionableFemaleQuery,
+  useGetMostFashionableMaleQuery,
+  useGetMostHandsomeQuery,
+  useGetTechPersonalityOfTheYearFemaleQuery,
+
+
+
+  Franklin
+  useGetTechPersonalityOfTheYearMaleQuery,
+  useGetULESSportPersonalityOfTheYearFemaleQuery,
+  useGetULESSportPersonalityOfTheYearMaleQuery,
+   */
 
   return (
     <main className="relative flex min-h-screen flex-col bg-[#141414] px-4 py-6 text-white">
@@ -29,11 +53,11 @@ const UndergraduateCategory = () => {
             />
           )}
           {index === 1 && (
-            <RookieOfTheYear
+            <LifeOfTheParty
               index={index}
               setIndex={setIndex}
-              candidate={rookieOfTheYear}
-              setCandidate={setRookieOfTheYear}
+              candidate={lifeOfTheParty}
+              setCandidate={setLifeOfTheParty}
             />
           )}
         </div>

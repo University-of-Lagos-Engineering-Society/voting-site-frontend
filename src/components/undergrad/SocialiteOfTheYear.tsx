@@ -4,14 +4,13 @@ import { useGetSocialiteOfTheYearQuery } from "@/redux/slices/undergrad";
 
 export interface FormProps {
   index: number;
-  candidate: string;
-  setCandidate: React.Dispatch<React.SetStateAction<string>>;
+  candidate: any;
+  setCandidate: React.Dispatch<React.SetStateAction<any>>;
   setIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const SocialiteOfTheYear = ({ index, candidate, setCandidate, setIndex }: FormProps) => {
   const { data, isLoading, isError } = useGetSocialiteOfTheYearQuery();
-  if (isLoading) return <div>Loading...</div>;
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
       <div className="mb-20">
@@ -29,17 +28,28 @@ const SocialiteOfTheYear = ({ index, candidate, setCandidate, setIndex }: FormPr
         </p>
       </div>
 
+
+      {isLoading && <div className="w-full h-full flex items-center justify-center mt-10 lg:mt-20">
+        {/* a spinner */}
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-200"></div>
+      </div>}
+
       {data && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl w-full mx-auto px-4 pb-8 overflow-y-scroll">
-          {data.map((c: { name: any }, i: number) => (
+          {data.map((c: { name: string; id: any; }, i: number) => (
             <Card
               candidate={candidate}
               key={i}
               index={i}
               name={c.name}
               handleClick={() => {
-                setCandidate(c.name);
-                setIndex(index + 1);
+                setCandidate(c);
+                //after one second, go to the next page
+                setTimeout(() => {
+                  setIndex(index + 1);
+                }
+                  , 1000);
+                
               }}
             />
           ))}
@@ -54,13 +64,13 @@ export default SocialiteOfTheYear;
 interface CardProps {
   index: number;
   name: string;
-  candidate: string;
+  candidate: any;
   handleClick: () => void;
 }
 
 // card for the nominees
 const Card = ({ index, candidate, name, handleClick }: CardProps) => {
-  let selected = candidate === name;
+  let selected = candidate?.name === name;
   const _handleClick = () => {
     handleClick();
   };
