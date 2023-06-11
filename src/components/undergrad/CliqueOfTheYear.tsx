@@ -1,45 +1,59 @@
 "use client";
 import React from "react";
-import { useGetCliqueOfTheYearQuery, } from "@/redux/slices/undergrad";
+import { useGetCliqueOfTheYearQuery} from "@/redux/slices/undergrad";
 
 export interface FormProps {
   index: number;
-  candidate: string;
-  setCandidate: React.Dispatch<React.SetStateAction<string>>;
+  candidate: any;
+  setCandidate: React.Dispatch<React.SetStateAction<any>>;
   setIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const CliqueOfTheYear = ({ index, candidate, setCandidate, setIndex }: FormProps) => {
+const CliqueOfTheYear = ({
+  index,
+  candidate,
+  setCandidate,
+  setIndex,
+}: FormProps) => {
   const { data, isLoading, isError } = useGetCliqueOfTheYearQuery();
-  if (isLoading) return <div>Loading...</div>;
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
       <div className="mb-20">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
-          Award : Clique of the year
+          Award : Clique of The Year
         </h1>
       </div>
 
       <div>
         <p className="work-sans text-xl lg:text-2xl">
-          Cast your vote for the Clique of the year
+          Cast your vote for the Clique of The Year
         </p>
         <p className="work-sans italic text-sm">
           You can only select one option.
         </p>
       </div>
 
+      {isLoading && (
+        <div className="w-full h-full flex items-center justify-center mt-10 lg:mt-20">
+          {/* a spinner */}
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-200"></div>
+        </div>
+      )}
+
       {data && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl w-full mx-auto px-4 pb-8 overflow-y-scroll">
-          {data.map((c: { name: any }, i: number) => (
+          {data.map((c: { name: string; id: any }, i: number) => (
             <Card
               candidate={candidate}
               key={i}
               index={i}
               name={c.name}
               handleClick={() => {
-                setCandidate(c.name);
-                setIndex(index + 1);
+                setCandidate(c);
+                //after one second, go to the next page
+                setTimeout(() => {
+                  setIndex(index + 1);
+                }, 1000);
               }}
             />
           ))}
@@ -54,13 +68,13 @@ export default CliqueOfTheYear;
 interface CardProps {
   index: number;
   name: string;
-  candidate: string;
+  candidate: any;
   handleClick: () => void;
 }
 
 // card for the nominees
 const Card = ({ index, candidate, name, handleClick }: CardProps) => {
-  let selected = candidate === name;
+  let selected = candidate?.name === name;
   const _handleClick = () => {
     handleClick();
   };
@@ -69,9 +83,7 @@ const Card = ({ index, candidate, name, handleClick }: CardProps) => {
       <div className="border py-1 px-3 flex items-center rounded-lg">
         {index + 1}.
       </div>
-      <div className="">
-        {name}
-      </div>
+      <div className="">{name}</div>
       <div
         onClick={_handleClick}
         className={`border

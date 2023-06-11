@@ -3,15 +3,27 @@ import { useState } from "react";
 import SocialiteOfTheYear from "@/components/undergrad/SocialiteOfTheYear";
 import Link from "next/link";
 import LifeOfTheParty from "@/components/undergrad/LifeOfTheParty";
+import CliqueOfTheYear from "@/components/undergrad/CliqueOfTheYear";
+import CreativeOfTheYear from "@/components/undergrad/CreativeOfTheYear";
+import EmergingEntrepreneur from "@/components/undergrad/EmergingEntrepreneur";
+import MostInfluential from "@/components/undergrad/MostInfluential";
+import MostPopular from "@/components/undergrad/MostPopular";
+
 
 const UndergraduateCategory = () => {
   const [index, setIndex] = useState(0);
   const [socialiteOfTheYear, setSocialiteOfTheYear] = useState(null);
   const [lifeOfTheParty, setLifeOfTheParty] = useState(null);
+  const [cliqueOfTheYear, setCliqueOfTheYear] = useState(null);
+  const [creativeOfTheYear, setCreativeOfTheYear] = useState(null);
+  const [emergingEntrepreneurOfTheYear, setEmergingEntrepreneurOfTheYear] = useState(null);
+  const [mostInfluential, setMostInfluential] = useState(null);
+  const [mostPopular, setMostPopular] = useState(null);
+
   /**
    * 
    * BIOLA
-  useGetCliqueOfTheYearQuery,
+   *   useGetCliqueOfTheYearQuery,
   useGetCreativeOfTheYearQuery,
   useGetEmergingEntrepreneurQuery,
     useGetMostInfluentialQuery,
@@ -60,6 +72,47 @@ const UndergraduateCategory = () => {
               setCandidate={setLifeOfTheParty}
             />
           )}
+          {index === 2 && (
+            <CliqueOfTheYear
+              index={index}
+              setIndex={setIndex}
+              candidate={cliqueOfTheYear}
+              setCandidate={setCliqueOfTheYear}
+            />
+          )}
+          {index === 3 && (
+            <CreativeOfTheYear
+              index={index}
+              setIndex={setIndex}
+              candidate={creativeOfTheYear}
+              setCandidate={setCreativeOfTheYear}
+            />
+          )}
+          {index === 4 && (
+            <EmergingEntrepreneur
+              index={index}
+              setIndex={setIndex}
+              candidate={emergingEntrepreneurOfTheYear}
+              setCandidate={setEmergingEntrepreneurOfTheYear}
+            />
+          )}
+          {index === 5 && (
+            <MostInfluential
+              index={index}
+              setIndex={setIndex}
+              candidate={mostInfluential}
+              setCandidate={setMostInfluential}
+            />
+          )}
+          {index === 6 && (
+            <MostPopular
+              index={index}
+              setIndex={setIndex}
+              candidate={mostPopular}
+              setCandidate={setMostPopular}
+            />
+          )}
+
         </div>
       </div>
     </main>

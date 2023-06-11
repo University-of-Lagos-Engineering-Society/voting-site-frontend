@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useGetEmergingEntrepreneurQuery} from "@/redux/slices/undergrad";
+import { useGetMostPopularQuery} from "@/redux/slices/undergrad";
 
 export interface FormProps {
   index: number;
@@ -9,24 +9,24 @@ export interface FormProps {
   setIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const EmergingEntrepreneur = ({
+const MostPopular = ({
   index,
   candidate,
   setCandidate,
   setIndex,
 }: FormProps) => {
-  const { data, isLoading, isError } = useGetEmergingEntrepreneurQuery();
+  const { data, isLoading, isError } = useGetMostPopularQuery();
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
       <div className="mb-20">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
-          Award : Emerging Entrepreneur of The Year
+          Award : Most Popular
         </h1>
       </div>
 
       <div>
         <p className="work-sans text-xl lg:text-2xl">
-          Cast your vote for the Emerging Entrepreneur of The Year
+          Cast your vote for the Most Popular
         </p>
         <p className="work-sans italic text-sm">
           You can only select one option.
@@ -63,7 +63,7 @@ const EmergingEntrepreneur = ({
   );
 };
 
-export default EmergingEntrepreneur;
+export default MostPopular;
 
 interface CardProps {
   index: number;
