@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useGetRookieOfTheYearQuery } from "@/redux/slices/undergrad";
+import { useGetRookieOfTheYearQuery } from "@/redux/slices/general";
 
 export interface FormProps {
   index: number;

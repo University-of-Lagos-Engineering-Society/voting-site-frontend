@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import SocialiteOfTheYear from "@/components/undergrad/SocialiteOfTheYear";
-import RookieOfTheYear from "@/components/undergrad/RookieOfTheYear";
+import RookieOfTheYear from "@/components/general/RookieOfTheYear";
 import Link from "next/link";
 
 const UndergraduateCategory = () => {
