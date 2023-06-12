@@ -8,6 +8,10 @@ import CreativeOfTheYear from "@/components/undergrad/CreativeOfTheYear";
 import EmergingEntrepreneur from "@/components/undergrad/EmergingEntrepreneur";
 import MostInfluential from "@/components/undergrad/MostInfluential";
 import MostPopular from "@/components/undergrad/MostPopular";
+import TechPersonalityOfTheYearMale from "@/components/undergrad/TechPersonalityOfTheYearMale";
+import ULESSportPersonalityOfTheYearFemale from "@/components/undergrad/ULESSportPersonalityOfTheYearFemale";
+import ULESSportPersonalityOfTheYearMale from "@/components/undergrad/ULESSportPersonalityOfTheYearMale";
+
 
 
 const UndergraduateCategory = () => {
@@ -19,7 +23,9 @@ const UndergraduateCategory = () => {
   const [emergingEntrepreneurOfTheYear, setEmergingEntrepreneurOfTheYear] = useState(null);
   const [mostInfluential, setMostInfluential] = useState(null);
   const [mostPopular, setMostPopular] = useState(null);
-
+  const [techPersonalityOfTheYearMale, setTechPersonalityOfTheYearMale] = useState(null);
+  const [ulesSportPersonalityOfTheYearFemale, setULESSportPersonalityOfTheYearFemale] = useState(null);
+  const [ulesSportPersonalityOfTheYearMale, setULESSportPersonalityOfTheYearMale] = useState(null);
   /**
    * 
    * BIOLA
@@ -110,6 +116,30 @@ const UndergraduateCategory = () => {
               setIndex={setIndex}
               candidate={mostPopular}
               setCandidate={setMostPopular}
+            />
+          )}
+          {index === 7 && (
+            <TechPersonalityOfTheYearMale
+              index={index}
+              setIndex={setIndex}
+              candidate={techPersonalityOfTheYearMale}
+              setCandidate={setTechPersonalityOfTheYearMale}
+            />
+          )}
+          {index === 8 && (
+            <ULESSportPersonalityOfTheYearFemale
+              index={index}
+              setIndex={setIndex}
+              candidate={ulesSportPersonalityOfTheYearFemale}
+              setCandidate={setULESSportPersonalityOfTheYearFemale}
+            />
+          )}
+          {index === 9 && (
+            <ULESSportPersonalityOfTheYearMale
+              index={index}
+              setIndex={setIndex}
+              candidate={ulesSportPersonalityOfTheYearMale}
+              setCandidate={setULESSportPersonalityOfTheYearMale}
             />
           )}
 
