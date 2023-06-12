@@ -13,6 +13,11 @@ import ULESSportPersonalityOfTheYearFemale from "@/components/undergrad/ULESSpor
 import ULESSportPersonalityOfTheYearMale from "@/components/undergrad/ULESSportPersonalityOfTheYearMale";
 
 
+import MostBeautiful from "@/components/undergrad/MostBeautiful";
+import MostHandsome from "@/components/undergrad/MostHandsome";
+import MostFashionableFemale from "@/components/undergrad/MostFashionableFemale";
+import MostFashionableMale from "@/components/undergrad/MostFashionableMale";
+import TechPersonalityOfTheYearFemale from "@/components/undergrad/TechPersonalityOfTheYearFemale";
 
 const UndergraduateCategory = () => {
   const [index, setIndex] = useState(0);
@@ -26,6 +31,11 @@ const UndergraduateCategory = () => {
   const [techPersonalityOfTheYearMale, setTechPersonalityOfTheYearMale] = useState(null);
   const [ulesSportPersonalityOfTheYearFemale, setULESSportPersonalityOfTheYearFemale] = useState(null);
   const [ulesSportPersonalityOfTheYearMale, setULESSportPersonalityOfTheYearMale] = useState(null);
+  const [mostBeautiful, setMostBeautiful] = useState(null);
+  const [mostHandsome, setMostHandsome] = useState(null);
+  const [mostFashionableFemale, setMostFashionableFemale] = useState(null);
+  const [mostFashionableMale, setMostFashionableMale] = useState(null);
+  const [techPersonalityOfTheYearFemale, setTechPersonalityOfTheYearFemale] = useState(null);
   /**
 
 
@@ -37,6 +47,18 @@ const UndergraduateCategory = () => {
   useGetMostFashionableMaleQuery,
   useGetMostHandsomeQuery,
   useGetTechPersonalityOfTheYearFemaleQuery,
+  useGetMostBeautifulQuery*,
+  useGetMostFashionableFemaleQuery*,
+  useGetMostFashionableMaleQuery*,
+  useGetMostHandsomeQuery*,
+  useGetTechPersonalityOfTheYearFemaleQuery*,
+
+
+
+  Franklin
+  useGetTechPersonalityOfTheYearMaleQuery,
+  useGetULESSportPersonalityOfTheYearFemaleQuery,
+  useGetULESSportPersonalityOfTheYearMaleQuery,
    */
 
   return (
@@ -130,6 +152,46 @@ const UndergraduateCategory = () => {
             />
           )}
 
+          {index === 10 && (
+            <MostBeautiful
+              index={index}
+              setIndex={setIndex}
+              candidate={mostBeautiful}
+              setCandidate={setMostBeautiful}
+            />
+          )}
+          {index === 11 && (
+            <MostHandsome
+              index={index}
+              setIndex={setIndex}
+              candidate={mostHandsome}
+              setCandidate={setMostHandsome}
+            />
+          )}
+          {index === 12 && (
+            <MostFashionableFemale
+              index={index}
+              setIndex={setIndex}
+              candidate={mostFashionableFemale}
+              setCandidate={setMostFashionableFemale}
+            />
+          )}
+          {index === 13 && (
+            <MostFashionableMale
+              index={index}
+              setIndex={setIndex}
+              candidate={mostFashionableMale}
+              setCandidate={setMostFashionableMale}
+            />
+          )}
+          {index === 14 && (
+            <TechPersonalityOfTheYearFemale
+              index={index}
+              setIndex={setIndex}
+              candidate={techPersonalityOfTheYearFemale}
+              setCandidate={setTechPersonalityOfTheYearFemale}
+            />
+          )}
         </div>
       </div>
     </main>
