@@ -27,13 +27,7 @@ const UndergraduateCategory = () => {
   const [ulesSportPersonalityOfTheYearFemale, setULESSportPersonalityOfTheYearFemale] = useState(null);
   const [ulesSportPersonalityOfTheYearMale, setULESSportPersonalityOfTheYearMale] = useState(null);
   /**
-   * 
-   * BIOLA
-   *   useGetCliqueOfTheYearQuery,
-  useGetCreativeOfTheYearQuery,
-  useGetEmergingEntrepreneurQuery,
-    useGetMostInfluentialQuery,
-  useGetMostPopularQuery,
+
 
 
 
@@ -43,13 +37,6 @@ const UndergraduateCategory = () => {
   useGetMostFashionableMaleQuery,
   useGetMostHandsomeQuery,
   useGetTechPersonalityOfTheYearFemaleQuery,
-
-
-
-  Franklin
-  useGetTechPersonalityOfTheYearMaleQuery,
-  useGetULESSportPersonalityOfTheYearFemaleQuery,
-  useGetULESSportPersonalityOfTheYearMaleQuery,
    */
 
   return (

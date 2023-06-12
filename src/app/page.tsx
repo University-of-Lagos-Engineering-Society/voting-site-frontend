@@ -42,7 +42,7 @@ export default function Home() {
                 href="/"
                 className="w-full lg:w-fit  border border-[#c7291f] font-bold text-[#c7291f] flex justify-center items-center gap-1 px-12 py-3 rounded-full"
               >
-                Donate now
+                Buy Tickets
               </Link>
             </div>
           </div>
