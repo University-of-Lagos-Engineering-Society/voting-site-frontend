@@ -16,7 +16,7 @@ const Categories = () => {
 
         <div className="flex flex-col gap-8 mt-4 lg:mt-16">
           <Card title="Graduate" number={7} to="/grad" />
-          <Card title="Undergraduate" number={7} to="/undergrad" />
+          <Card title="Undergraduate" number={14} to="/undergrad" />
           <Card title="General" number={7} to="/general" />
         </div>
         {/* Background */}

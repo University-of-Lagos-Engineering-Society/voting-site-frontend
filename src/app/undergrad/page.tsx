@@ -36,30 +36,6 @@ const UndergraduateCategory = () => {
   const [mostFashionableFemale, setMostFashionableFemale] = useState(null);
   const [mostFashionableMale, setMostFashionableMale] = useState(null);
   const [techPersonalityOfTheYearFemale, setTechPersonalityOfTheYearFemale] = useState(null);
-  /**
-
-
-
-
-  TONI
-  useGetMostBeautifulQuery,
-  useGetMostFashionableFemaleQuery,
-  useGetMostFashionableMaleQuery,
-  useGetMostHandsomeQuery,
-  useGetTechPersonalityOfTheYearFemaleQuery,
-  useGetMostBeautifulQuery*,
-  useGetMostFashionableFemaleQuery*,
-  useGetMostFashionableMaleQuery*,
-  useGetMostHandsomeQuery*,
-  useGetTechPersonalityOfTheYearFemaleQuery*,
-
-
-
-  Franklin
-  useGetTechPersonalityOfTheYearMaleQuery,
-  useGetULESSportPersonalityOfTheYearFemaleQuery,
-  useGetULESSportPersonalityOfTheYearMaleQuery,
-   */
 
   return (
     <main className="relative flex min-h-screen flex-col bg-[#141414] px-4 py-6 text-white">
