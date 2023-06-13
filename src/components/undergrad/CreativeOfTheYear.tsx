@@ -18,7 +18,7 @@ const CreativeOfTheYear = ({
   const { data, isLoading, isError } = useGetCreativeOfTheYearQuery();
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
-      <div className="mb-20">
+      <div className="mb-20 flex flex-col gap-4">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
           Award : Creative of The Year
         </h1>
