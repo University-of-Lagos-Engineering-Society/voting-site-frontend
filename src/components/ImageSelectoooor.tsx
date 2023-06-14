@@ -60,7 +60,7 @@ const ImageSelectoooor = ({ image_name }: ImageSelectoooorProps) => {
     return (
       <div className="w-full">
         <Image
-          src={selectoor_map[image_name || "DefaultBanner"]}
+          src={selectoor_map[image_name || "DefaultBanner"] || DefaultBanner}
           alt="ULES Logo"
           className="cursor-pointer w-full h-full"
         />

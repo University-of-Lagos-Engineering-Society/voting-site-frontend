@@ -14,7 +14,7 @@ const SocialiteOfTheYear = ({ index, candidate, setCandidate, setIndex }: FormPr
   const { data, isLoading, isError } = useGetSocialiteOfTheYearQuery();
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
-      <div className="mb-20 flex flex-col gap-4">
+      <div className="mb-10 flex flex-col gap-6">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
           Award : Socialite of the Year
         </h1>

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useGetMostPopularQuery} from "@/redux/slices/undergrad";
+import ImageSelectoooor from "../ImageSelectoooor";
 
 export interface FormProps {
   index: number;
@@ -18,10 +19,11 @@ const MostPopular = ({
   const { data, isLoading, isError } = useGetMostPopularQuery();
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
-      <div className="mb-20">
+      <div className="mb-10 flex flex-col gap-6">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
           Award : Most Popular
         </h1>
+        <ImageSelectoooor image_name="MostPopularUndergrad" />
       </div>
 
       <div>

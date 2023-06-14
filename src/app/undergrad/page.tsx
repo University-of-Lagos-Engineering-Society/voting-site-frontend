@@ -12,33 +12,69 @@ import TechPersonalityOfTheYearMale from "@/components/undergrad/TechPersonality
 import ULESSportPersonalityOfTheYearFemale from "@/components/undergrad/ULESSportPersonalityOfTheYearFemale";
 import ULESSportPersonalityOfTheYearMale from "@/components/undergrad/ULESSportPersonalityOfTheYearMale";
 
-
 import MostBeautiful from "@/components/undergrad/MostBeautiful";
 import MostHandsome from "@/components/undergrad/MostHandsome";
 import MostFashionableFemale from "@/components/undergrad/MostFashionableFemale";
 import MostFashionableMale from "@/components/undergrad/MostFashionableMale";
 import TechPersonalityOfTheYearFemale from "@/components/undergrad/TechPersonalityOfTheYearFemale";
 
-const UndergraduateCategory = () => {
-  const [index, setIndex] = useState(0);
-  const [socialiteOfTheYear, setSocialiteOfTheYear] = useState(null);
-  const [lifeOfTheParty, setLifeOfTheParty] = useState(null);
-  const [cliqueOfTheYear, setCliqueOfTheYear] = useState(null);
-  const [creativeOfTheYear, setCreativeOfTheYear] = useState(null);
-  const [emergingEntrepreneurOfTheYear, setEmergingEntrepreneurOfTheYear] = useState(null);
-  const [mostInfluential, setMostInfluential] = useState(null);
-  const [mostPopular, setMostPopular] = useState(null);
-  const [techPersonalityOfTheYearMale, setTechPersonalityOfTheYearMale] = useState(null);
-  const [ulesSportPersonalityOfTheYearFemale, setULESSportPersonalityOfTheYearFemale] = useState(null);
-  const [ulesSportPersonalityOfTheYearMale, setULESSportPersonalityOfTheYearMale] = useState(null);
-  const [mostBeautiful, setMostBeautiful] = useState(null);
-  const [mostHandsome, setMostHandsome] = useState(null);
-  const [mostFashionableFemale, setMostFashionableFemale] = useState(null);
-  const [mostFashionableMale, setMostFashionableMale] = useState(null);
-  const [techPersonalityOfTheYearFemale, setTechPersonalityOfTheYearFemale] = useState(null);
+type Nominee = {
+  _id: string;
+};
 
+const UndergraduateCategory = () => {
+  const [index, setIndex] = useState<number>(0);
+  const [socialiteOfTheYear, setSocialiteOfTheYear] = useState<Nominee | null>(
+    null
+  );
+  const [lifeOfTheParty, setLifeOfTheParty] = useState<Nominee | null>(null);
+  const [cliqueOfTheYear, setCliqueOfTheYear] = useState<Nominee | null>(null);
+  const [creativeOfTheYear, setCreativeOfTheYear] = useState<Nominee | null>(
+    null
+  );
+  const [emergingEntrepreneurOfTheYear, setEmergingEntrepreneurOfTheYear] =
+    useState<Nominee | null>(null);
+  const [mostInfluential, setMostInfluential] = useState<Nominee | null>(null);
+  const [mostPopular, setMostPopular] = useState<Nominee | null>(null);
+  const [techPersonalityOfTheYearMale, setTechPersonalityOfTheYearMale] =
+    useState<Nominee | null>(null);
+  const [
+    ulesSportPersonalityOfTheYearFemale,
+    setULESSportPersonalityOfTheYearFemale,
+  ] = useState<Nominee | null>(null);
+  const [
+    ulesSportPersonalityOfTheYearMale,
+    setULESSportPersonalityOfTheYearMale,
+  ] = useState<Nominee | null>(null);
+  const [mostBeautiful, setMostBeautiful] = useState<Nominee | null>(null);
+  const [mostHandsome, setMostHandsome] = useState<Nominee | null>(null);
+  const [mostFashionableFemale, setMostFashionableFemale] =
+    useState<Nominee | null>(null);
+  const [mostFashionableMale, setMostFashionableMale] =
+    useState<Nominee | null>(null);
+  const [techPersonalityOfTheYearFemale, setTechPersonalityOfTheYearFemale] =
+    useState<Nominee | null>(null);
+
+  const triggerFunction = () => {
+    //console.log("triggered");
+    console.log("socialiteOfTheYear", socialiteOfTheYear?._id);
+    console.log("lifeOfTheParty", lifeOfTheParty?._id);
+    console.log("cliqueOfTheYear", cliqueOfTheYear?._id);
+    console.log("creativeOfTheYear", creativeOfTheYear?._id);
+    console.log("emergingEntrepreneurOfTheYear", emergingEntrepreneurOfTheYear?._id);
+    console.log("mostInfluential", mostInfluential?._id);
+    console.log("mostPopular", mostPopular?._id);
+    console.log("techPersonalityOfTheYearMale", techPersonalityOfTheYearMale?._id);
+    console.log("ulesSportPersonalityOfTheYearFemale", ulesSportPersonalityOfTheYearFemale?._id);
+    console.log("ulesSportPersonalityOfTheYearMale", ulesSportPersonalityOfTheYearMale?._id);
+    console.log("mostBeautiful", mostBeautiful?._id);
+    console.log("mostHandsome", mostHandsome?._id);
+    console.log("mostFashionableFemale", mostFashionableFemale?._id);
+    console.log("mostFashionableMale", mostFashionableMale?._id);
+    console.log("techPersonalityOfTheYearFemale", techPersonalityOfTheYearFemale?._id);
+  };
   return (
-    <main className="relative flex min-h-screen flex-col bg-[#141414] px-4 py-6 text-white">
+    <main className="re lative flex min-h-screen flex-col bg-[#141414] px-4 py-6 text-white">
       <div className="max-w-7xl mx-auto w-full">
         <Link
           href={"/categories"}
@@ -166,6 +202,7 @@ const UndergraduateCategory = () => {
               setIndex={setIndex}
               candidate={techPersonalityOfTheYearFemale}
               setCandidate={setTechPersonalityOfTheYearFemale}
+              triggerFunction={triggerFunction}
             />
           )}
         </div>
