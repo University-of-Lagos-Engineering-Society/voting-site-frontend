@@ -23,28 +23,55 @@ import TechPersonalityOfTheYearMale from "@/components/grad/TechPersonalityOfThe
 import ULESSportPersonalityOfTheYearFemale from "@/components/grad/ULESSportPersonalityOfTheYearFemale";
 import ULESSportPersonalityOfTheYearMale from "@/components/grad/ULESSportPersonalityOfTheYearMale";
 
+type Nominee = {
+  _id: string;
+};
+
 const GraduateCategory = () => {
-  const [index, setIndex] = useState(0);
-  const [socialiteOfTheYear, setSocialiteOfTheYear] = useState(null);
-  const [lifeOfTheParty, setLifeOfTheParty] = useState(null);
-  const [coupleOfTheYear, setCoupleOfTheYear] = useState(null);
-  const [emergingEntrepreneurOfTheYear, setEmergingEntrepreneurOfTheYear] = useState(null);
-  const [mostInfluential, setMostInfluential] = useState(null);
-  const [mostPopular, setMostPopular] = useState(null);
-  const [mostBeautiful, setMostBeautiful] = useState(null);
-  const [mostHandsome, setMostHandsome] = useState(null);
-  const [mostVersatile, setMostVersatile] = useState(null);
-  const [bestDressedFemale, setBestDressedFemale] = useState(null);
-  const [bestDressedMale, setBestDressedMale] = useState(null);
-  const [outstandingAcademicPerformanceAward, setOutstandingAcademicPerformanceAward] = useState(null);
-  const [socialImpactAward, setSocialImpactAward] = useState(null);
-  const [socialMediaPersonality, setSocialMediaPersonality] = useState(null);
-  const [startupVisionaryAward, setStartupVisionaryAward] = useState(null);
-  const [studentEntertainerOfTheYear, setStudentEntertainerOfTheYear] = useState(null);
-  const [techPersonalityOfTheYearFemale, setTechPersonalityOfTheYearFemale] = useState(null);
-  const [techPersonalityOfTheYearMale, setTechPersonalityOfTheYearMale] = useState(null);
-  const [ulesSportPersonalityOfTheYearFemale, setULESSportPersonalityOfTheYearFemale] = useState(null);
-  const [ulesSportPersonalityOfTheYearMale, setULESSportPersonalityOfTheYearMale] = useState(null);
+  const [index, setIndex] = useState<number>(0);
+  const [socialiteOfTheYear, setSocialiteOfTheYear] = useState<Nominee | null>(null);
+  const [lifeOfTheParty, setLifeOfTheParty] = useState<Nominee | null>(null);
+  const [coupleOfTheYear, setCoupleOfTheYear] = useState<Nominee | null>(null);
+  const [emergingEntrepreneurOfTheYear, setEmergingEntrepreneurOfTheYear] = useState<Nominee | null>(null);
+  const [mostInfluential, setMostInfluential] = useState<Nominee | null>(null);
+  const [mostPopular, setMostPopular] = useState<Nominee | null>(null);
+  const [mostBeautiful, setMostBeautiful] = useState<Nominee | null>(null);
+  const [mostHandsome, setMostHandsome] = useState<Nominee | null>(null);
+  const [mostVersatile, setMostVersatile] = useState<Nominee | null>(null);
+  const [bestDressedFemale, setBestDressedFemale] = useState<Nominee | null>(null);
+  const [bestDressedMale, setBestDressedMale] = useState<Nominee | null>(null);
+  const [outstandingAcademicPerformanceAward, setOutstandingAcademicPerformanceAward] = useState<Nominee | null>(null);
+  const [socialImpactAward, setSocialImpactAward] = useState<Nominee | null>(null);
+  const [socialMediaPersonality, setSocialMediaPersonality] = useState<Nominee | null>(null);
+  const [startupVisionaryAward, setStartupVisionaryAward] = useState<Nominee | null>(null);
+  const [studentEntertainerOfTheYear, setStudentEntertainerOfTheYear] = useState<Nominee | null>(null);
+  const [techPersonalityOfTheYearFemale, setTechPersonalityOfTheYearFemale] = useState<Nominee | null>(null);
+  const [techPersonalityOfTheYearMale, setTechPersonalityOfTheYearMale] = useState<Nominee | null>(null);
+  const [ulesSportPersonalityOfTheYearFemale, setULESSportPersonalityOfTheYearFemale] = useState<Nominee | null>(null);
+  const [ulesSportPersonalityOfTheYearMale, setULESSportPersonalityOfTheYearMale] = useState<Nominee | null>(null);
+
+  const triggerFunction = () => {
+    console.log("socialiteOfTheYear", socialiteOfTheYear?._id);
+    console.log("lifeOfTheParty", lifeOfTheParty?._id);
+    console.log("coupleOfTheYear", coupleOfTheYear?._id);
+    console.log("emergingEntrepreneurOfTheYear", emergingEntrepreneurOfTheYear?._id);
+    console.log("mostInfluential", mostInfluential?._id);
+    console.log("mostPopular", mostPopular?._id);
+    console.log("mostBeautiful", mostBeautiful?._id);
+    console.log("mostHandsome", mostHandsome?._id);
+    console.log("mostVersatile", mostVersatile?._id);
+    console.log("bestDressedFemale", bestDressedFemale?._id);
+    console.log("bestDressedMale", bestDressedMale?._id);
+    console.log("outstandingAcademicPerformanceAward", outstandingAcademicPerformanceAward?._id);
+    console.log("socialImpactAward", socialImpactAward?._id);
+    console.log("socialMediaPersonality", socialMediaPersonality?._id);
+    console.log("startupVisionaryAward", startupVisionaryAward?._id);
+    console.log("studentEntertainerOfTheYear", studentEntertainerOfTheYear?._id);
+    console.log("techPersonalityOfTheYearFemale", techPersonalityOfTheYearFemale?._id);
+    console.log("techPersonalityOfTheYearMale", techPersonalityOfTheYearMale?._id);
+    console.log("ulesSportPersonalityOfTheYearFemale", ulesSportPersonalityOfTheYearFemale?._id);
+    console.log("ulesSportPersonalityOfTheYearMale", ulesSportPersonalityOfTheYearMale?._id);
+  };
 
   return (
     <main className="relative flex min-h-screen flex-col bg-[#141414] px-4 py-6 text-white">
@@ -216,6 +243,7 @@ const GraduateCategory = () => {
               setIndex={setIndex}
               candidate={ulesSportPersonalityOfTheYearMale}
               setCandidate={setULESSportPersonalityOfTheYearMale}
+              triggerFunction={triggerFunction}
             />
           )}
 
@@ -226,24 +254,3 @@ const GraduateCategory = () => {
 };
 
 export default GraduateCategory;
-
-
-// import Link from "next/link";
-// import React from "react";
-
-// const GeneralCategory = () => {
-//   return (
-//     <main className="relative flex min-h-screen xl:h-screen overflow-hidden flex-col bg-[#141414] px-4 py-6 text-white">
-//       <div className="max-w-7xl mx-auto w-full">
-//         <Link
-//           href={"/categories"}
-//           className="text-xl font-semibold text-[#E1544A] work-sans mt-6 pb-2"
-//         >
-//           GRADUATE CATEGORY
-//         </Link>
-//       </div>
-//     </main>
-//   );
-// };
-
-// export default GeneralCategory;

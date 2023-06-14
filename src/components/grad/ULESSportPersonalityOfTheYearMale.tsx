@@ -7,15 +7,16 @@ export interface FormProps {
   candidate: any;
   setCandidate: React.Dispatch<React.SetStateAction<any>>;
   setIndex: React.Dispatch<React.SetStateAction<number>>;
+  triggerFunction: () => void;
 }
 
-const ULESSportPersonalityOfTheYearMale = ({ index, candidate, setCandidate, setIndex }: FormProps) => {
+const ULESSportPersonalityOfTheYearMale = ({ index, candidate, setCandidate, setIndex, triggerFunction }: FormProps) => {
   const { data, isLoading, isError } = useGetULESSportPersonalityOfTheYearMaleQuery();
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
       <div className="mb-20">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
-          Award : ULES Male Sport Personality of the Year 
+          Award : ULES Male Sport Personality of the Year
         </h1>
       </div>
 
@@ -46,10 +47,11 @@ const ULESSportPersonalityOfTheYearMale = ({ index, candidate, setCandidate, set
                 setCandidate(c);
                 //after one second, go to the next page
                 setTimeout(() => {
-                  setIndex(index + 1);
+                 // setIndex(index + 1);
+                 triggerFunction();
                 }
                   , 1000);
-                
+
               }}
             />
           ))}
