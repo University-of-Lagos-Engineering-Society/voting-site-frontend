@@ -19,7 +19,7 @@ const CliqueOfTheYear = ({
   const { data, isLoading, isError } = useGetCliqueOfTheYearQuery();
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
-      <div className="mb-20 flex flex-col gap-4">
+      <div className="mb-10 flex flex-col gap-6">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
           Award : Clique of The Year
         </h1>
