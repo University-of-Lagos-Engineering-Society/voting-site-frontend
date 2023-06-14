@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useGetRookieOfTheYearQuery } from "@/redux/slices/general";
+import { useGetULESTrailblazerAwardQuery } from "@/redux/slices/general";
 
 export interface FormProps {
   index: number;
@@ -9,13 +9,13 @@ export interface FormProps {
   setIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const RookieOfTheYear = ({
+const ULESTrailblazerAward = ({
   index,
   candidate,
   setCandidate,
   setIndex,
 }: FormProps) => {
-  const { data, isLoading, isError } = useGetRookieOfTheYearQuery();
+  const { data, isLoading, isError } = useGetULESTrailblazerAwardQuery();
   if (isLoading) return <div>Loading...</div>;
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
@@ -57,7 +57,7 @@ const RookieOfTheYear = ({
   );
 };
 
-export default RookieOfTheYear;
+export default ULESTrailblazerAward;
 
 interface CardProps {
   index: number;

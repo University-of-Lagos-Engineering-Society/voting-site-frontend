@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useGetRookieOfTheYearQuery } from "@/redux/slices/general";
+import { useGetExcoBodytOfTheYearQuery } from "@/redux/slices/general";
 
 export interface FormProps {
   index: number;
@@ -9,25 +9,25 @@ export interface FormProps {
   setIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const RookieOfTheYear = ({
+const ExcoBodytOfTheYear = ({
   index,
   candidate,
   setCandidate,
   setIndex,
 }: FormProps) => {
-  const { data, isLoading, isError } = useGetRookieOfTheYearQuery();
+  const { data, isLoading, isError } = useGetExcoBodytOfTheYearQuery();
   if (isLoading) return <div>Loading...</div>;
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
       <div className="mb-20">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
-          Award : Rookie of the Year
+          Award : Exco Body of the Year
         </h1>
       </div>
 
       <div>
         <p className="work-sans text-xl lg:text-2xl">
-          Cast your vote for the Rookie of the Year
+          Cast your vote for the Exco Body of the Year
         </p>
         <p className="work-sans italic text-sm">
           You can only select one option.
@@ -45,9 +45,9 @@ const RookieOfTheYear = ({
               handleClick={() => {
                 setCandidate(c);
                 //after one second, go to the next page
-                setTimeout(() => {
+                //setTimeout(() => {
                   setIndex(index + 1);
-                }, 1000);
+                //}, 1000);
               }}
             />
           ))}
@@ -57,7 +57,7 @@ const RookieOfTheYear = ({
   );
 };
 
-export default RookieOfTheYear;
+export default ExcoBodytOfTheYear;
 
 interface CardProps {
   index: number;
