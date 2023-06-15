@@ -78,7 +78,7 @@ const GraduateCategory = () => {
       <div className="max-w-7xl mx-auto w-full">
         <Link
           href={"/categories"}
-          className="text-xl font-semibold text-[#E1544A] work-sans pb-2 uppercase"
+          className="text-sm lg:text-xl font-medium text-[#E1544A] work-sans pb-2 uppercase"
         >
           GRADUATE CATEGORY
         </Link>

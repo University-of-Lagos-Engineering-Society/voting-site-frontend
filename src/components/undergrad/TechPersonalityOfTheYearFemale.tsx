@@ -21,17 +21,29 @@ const TechPersonalityOfTheYearFemale = ({ index, candidate, setCandidate,
         <div className="mb-10 flex flex-col gap-6">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
             Award : Tech Personality Of The Year Female
-                </h1>
-                <ImageSelectoooor image_name="TechPersonalityOfTheYearFemale" />
+          </h1>
+          <ImageSelectoooor image_name="TechPersonalityOfTheYearFemale" />
         </div>
 
-        <div>
-          <p className="work-sans text-xl lg:text-2xl">
-            Cast your vote for the Tech Personality Of The Year Female
-          </p>
-          <p className="work-sans italic text-sm">
-            You can only select one option.
-          </p>
+        <div className="w-full flex flex-col lg:flex-row items-center justify-between">
+          <div>
+            <p className="work-sans text-xl lg:text-2xl">
+              Cast your vote for the Tech Personality Of The Year Female
+            </p>
+            <p className="work-sans italic text-sm">
+              You can only select one option.
+            </p>
+          </div>
+
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              triggerFunction();
+            }}
+            className="mt-6 lg:mt-0 ml-auto lg:ml-0 w-fit bg-[#c7291f] text-white font-bold rounded-full flex justify-center items-center gap-1 px-12 py-3"
+          >
+            Submit
+          </button>
         </div>
 
         {isLoading && (
@@ -51,11 +63,6 @@ const TechPersonalityOfTheYearFemale = ({ index, candidate, setCandidate,
                 name={c.name}
                 handleClick={() => {
                   setCandidate(c);
-                  //after one second, go to the next page
-                  setTimeout(() => {
-                    // setIndex(index + 1);
-                    triggerFunction();
-                  }, 1000);
                 }}
               />
             ))}

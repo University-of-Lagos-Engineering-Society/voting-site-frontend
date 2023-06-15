@@ -21,24 +21,25 @@ const SocialiteOfTheYear = ({ index, candidate, setCandidate, setIndex }: FormPr
         <ImageSelectoooor />
       </div>
 
-      <div>
-        <p className="work-sans text-xl lg:text-2xl">
-          Cast your vote for the Socialite of the Year
-        </p>
-        <p className="work-sans italic text-sm">
-          You can only select one option.
-        </p>
-      </div>
+        <div>
+          <p className="work-sans text-xl lg:text-2xl">
+            Cast your vote for the Socialite of the Year
+          </p>
+          <p className="work-sans italic text-sm">
+            You can only select one option.
+          </p>
+        </div>
 
-
-      {isLoading && <div className="w-full h-full flex items-center justify-center mt-10 lg:mt-20">
-        {/* a spinner */}
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-200"></div>
-      </div>}
+      {isLoading && (
+        <div className="w-full h-full flex items-center justify-center mt-10 lg:mt-20">
+          {/* a spinner */}
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-200"></div>
+        </div>
+      )}
 
       {data && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl w-full mx-auto px-4 pb-8 overflow-y-scroll">
-          {data.map((c: { name: string; id: any; }, i: number) => (
+          {data.map((c: { name: string; id: any }, i: number) => (
             <Card
               candidate={candidate}
               key={i}
@@ -49,9 +50,7 @@ const SocialiteOfTheYear = ({ index, candidate, setCandidate, setIndex }: FormPr
                 //after one second, go to the next page
                 setTimeout(() => {
                   setIndex(index + 1);
-                }
-                  , 1000);
-                
+                }, 1000);
               }}
             />
           ))}

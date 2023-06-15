@@ -21,25 +21,37 @@ const ULESSportPersonalityOfTheYearMale = ({ index, candidate, setCandidate, set
         </h1>
         <ImageSelectoooor />
       </div>
+      <div className="w-full flex flex-col lg:flex-row items-center justify-between">
+        <div>
+          <p className="work-sans text-xl lg:text-2xl">
+            Cast your vote for the ULES Male Sport Personality of the Year
+          </p>
+          <p className="work-sans italic text-sm">
+            You can only select one option.
+          </p>
+        </div>
 
-      <div>
-        <p className="work-sans text-xl lg:text-2xl">
-          Cast your vote for the ULES Male Sport Personality of the Year
-        </p>
-        <p className="work-sans italic text-sm">
-          You can only select one option.
-        </p>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            triggerFunction();
+          }}
+          className="mt-6 lg:mt-0 ml-auto lg:ml-0 w-fit bg-[#c7291f] text-white font-bold rounded-full flex justify-center items-center gap-1 px-12 py-3"
+        >
+          Submit
+        </button>
       </div>
 
-
-      {isLoading && <div className="w-full h-full flex items-center justify-center mt-10 lg:mt-20">
-        {/* a spinner */}
-        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-200"></div>
-      </div>}
+      {isLoading && (
+        <div className="w-full h-full flex items-center justify-center mt-10 lg:mt-20">
+          {/* a spinner */}
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-200"></div>
+        </div>
+      )}
 
       {data && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl w-full mx-auto px-4 pb-8 overflow-y-scroll">
-          {data.map((c: { name: string; id: any; }, i: number) => (
+          {data.map((c: { name: string; id: any }, i: number) => (
             <Card
               candidate={candidate}
               key={i}
@@ -49,11 +61,9 @@ const ULESSportPersonalityOfTheYearMale = ({ index, candidate, setCandidate, set
                 setCandidate(c);
                 //after one second, go to the next page
                 setTimeout(() => {
-                 // setIndex(index + 1);
-                 triggerFunction();
-                }
-                  , 1000);
-
+                  // setIndex(index + 1);
+                  triggerFunction();
+                }, 1000);
               }}
             />
           ))}

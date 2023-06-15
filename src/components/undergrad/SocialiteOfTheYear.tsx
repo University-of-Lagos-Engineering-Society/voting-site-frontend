@@ -19,18 +19,17 @@ const SocialiteOfTheYear = ({ index, candidate, setCandidate, setIndex }: FormPr
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
           Award : Socialite of the Year
         </h1>
-      <ImageSelectoooor image_name="SocialiteOfTheYear" />
+        <ImageSelectoooor image_name="SocialiteOfTheYear" />
       </div>
-      
 
-      <div>
-        <p className="work-sans text-xl lg:text-2xl">
-          Cast your vote for the Socialite of the Year
-        </p>
-        <p className="work-sans italic text-sm">
-          You can only select one option.
-        </p>
-      </div>
+        <div>
+          <p className="work-sans text-xl lg:text-2xl">
+            Cast your vote for the Socialite of the Year
+          </p>
+          <p className="work-sans italic text-sm">
+            You can only select one option.
+          </p>
+        </div>
 
       {isLoading && (
         <div className="w-full h-full flex items-center justify-center mt-10 lg:mt-20">
