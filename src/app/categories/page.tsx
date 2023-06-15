@@ -15,9 +15,9 @@ const Categories = () => {
         </h3>
 
         <div className="flex flex-col gap-8 mt-4 lg:mt-16">
-          <Card title="Graduate" number={7} to="/grad" />
+          <Card title="Graduate" number={20} to="/grad" />
           <Card title="Undergraduate" number={15} to="/undergrad" />
-          <Card title="General" number={7} to="/general" />
+          <Card title="General" number={22} to="/general" />
         </div>
         {/* Background */}
         <div className="absolute lg:top-[200px] left-0 w-full h-full z-10">

@@ -2,7 +2,6 @@ import { api } from "../api";
 
 const gradApi = api.injectEndpoints({
   endpoints: (builder) => ({
-
     getSocialiteOfTheYearGrad: builder.query<any, void>({
       query: () => {
         return {
@@ -12,7 +11,7 @@ const gradApi = api.injectEndpoints({
       },
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Socialite of the year";
+          return nominee?.category?.name === "G-Socialite of the year";
         });
       },
     }),
@@ -27,7 +26,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Life of the party";
+          return nominee?.category?.name === "G-Life of the party";
         });
       },
     }),
@@ -42,7 +41,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Most Handsome";
+          return nominee?.category?.name === "G-Most Handsome";
         });
       },
     }),
@@ -57,7 +56,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Most Beautiful";
+          return nominee?.category?.name === "G-Most Beautiful";
         });
       },
     }),
@@ -72,7 +71,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Most Influential";
+          return nominee?.category?.name === "G-Most Influential";
         });
       },
     }),
@@ -87,7 +86,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Most Popular";
+          return nominee?.category?.name === "G-Most Popular";
         });
       },
     }),
@@ -102,7 +101,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Best dressed(Female)";
+          return nominee?.category?.name === "G-Best dressed(Female)";
         });
       },
     }),
@@ -117,7 +116,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Best dressed(Male)";
+          return nominee?.category?.name === "G-Best dressed(Male)";
         });
       },
     }),
@@ -132,7 +131,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Couple of the year";
+          return nominee?.category?.name === "G-Couple of the year";
         });
       },
     }),
@@ -147,7 +146,9 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Tech personality of the year(Male)";
+          return (
+            nominee?.category?.name === "G-Tech personality of the year(Male)"
+          );
         });
       },
     }),
@@ -162,7 +163,9 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Tech personality of the year(Female)";
+          return (
+            nominee?.category?.name === "G-Tech personality of the year(Female)"
+          );
         });
       },
     }),
@@ -177,7 +180,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Emerging Entrepreneur";
+          return nominee?.category?.name === "G-Emerging Entrepreneur";
         });
       },
     }),
@@ -192,7 +195,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Start-up visionary award";
+          return nominee?.category?.name === "G-Start-up visionary award";
         });
       },
     }),
@@ -207,7 +210,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Social Media Personality";
+          return nominee?.category?.name === "G-Social Media Personality";
         });
       },
     }),
@@ -222,7 +225,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Student entertainer of the year";
+          return nominee?.category?.name === "G-Student entertainer of the year";
         });
       },
     }),
@@ -237,7 +240,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Most Versatile";
+          return nominee?.category?.name === "G-Most Versatile";
         });
       },
     }),
@@ -252,7 +255,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Social Impact Award";
+          return nominee?.category?.name === "G-Social Impact Award";
         });
       },
     }),
@@ -267,7 +270,9 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-Outstanding Academic Performance Award";
+          return (
+            nominee?.category?.name === "G-Outstanding Academic Performance Award"
+          );
         });
       },
     }),
@@ -282,7 +287,9 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-ULES sport personality of the year";
+          return (
+            nominee?.category?.name === "G-ULES sport personality of the year"
+          );
         });
       },
     }),
@@ -297,11 +304,16 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "G-ULES sport personality of the year(Female)";
+          return (
+            nominee?.category?.name ===
+            "G-ULES sport personality of the year(Female)"
+          );
         });
       },
-    })
+    }),
   }),
+  // @ts-ignore
+  overrideExisting: module.hot?.status() === "apply",
 });
 
 

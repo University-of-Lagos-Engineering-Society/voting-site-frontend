@@ -12,7 +12,7 @@ const undergradApi = api.injectEndpoints({
       },
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-Socialite of the year";
+          return nominee?.category?.name === "U-Socialite of the year";
         });
       },
     }),
@@ -27,7 +27,7 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-Life of the party";
+          return nominee?.category?.name === "U-Life of the party";
         });
       },
     }),
@@ -42,7 +42,7 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-Most Handsome";
+          return nominee?.category?.name === "U-Most Handsome";
         });
       },
     }),
@@ -57,7 +57,7 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-Most Beautiful";
+          return nominee?.category?.name === "U-Most Beautiful";
         });
       },
     }),
@@ -72,7 +72,7 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-Most Influential";
+          return nominee?.category?.name === "U-Most Influential";
         });
       },
     }),
@@ -87,7 +87,7 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-Most Popular";
+          return nominee?.category?.name === "U-Most Popular";
         });
       },
     }),
@@ -102,7 +102,7 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-Most Fashionable(Female)";
+          return nominee?.category?.name === "U-Most Fashionable(Female)";
         });
       },
     }),
@@ -117,7 +117,7 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-Most Fashionable(Male)";
+          return nominee?.category?.name === "U-Most Fashionable(Male)";
         });
       },
     }),
@@ -132,7 +132,7 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-Clique of the year";
+          return nominee?.category?.name === "U-Clique of the year";
         });
       },
     }),
@@ -148,7 +148,7 @@ const undergradApi = api.injectEndpoints({
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
           return (
-            nominee.category.name === "U-Tech personality of the year(Male)"
+            nominee?.category?.name === "U-Tech personality of the year(Male)"
           );
         });
       },
@@ -165,7 +165,7 @@ const undergradApi = api.injectEndpoints({
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
           return (
-            nominee.category.name === "U-Tech personality of the year(Female)"
+            nominee?.category?.name === "U-Tech personality of the year(Female)"
           );
         });
       },
@@ -181,7 +181,7 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-Emerging Entrepreneur";
+          return nominee?.category?.name === "U-Emerging Entrepreneur";
         });
       },
     }),
@@ -196,7 +196,7 @@ const undergradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee.category.name === "U-Creative of the year";
+          return nominee?.category?.name === "U-Creative of the year";
         });
       },
     }),
@@ -212,7 +212,7 @@ const undergradApi = api.injectEndpoints({
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
           return (
-            nominee.category.name ===
+            nominee?.category?.name ===
             "U-ULES sport personality of the year(Male)"
           );
         });
@@ -230,13 +230,15 @@ const undergradApi = api.injectEndpoints({
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
           return (
-            nominee.category.name ===
+            nominee?.category?.name ===
             "U-ULES sport personality of the year(Female)"
           );
         });
       },
     }),
   }),
+  	 // @ts-ignore
+	overrideExisting: true,
 });
 
 export const {
