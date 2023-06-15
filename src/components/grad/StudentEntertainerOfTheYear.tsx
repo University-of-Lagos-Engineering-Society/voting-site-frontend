@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useGetStudentEntertainerOfTheYearQuery } from "@/redux/slices/grad";
+import ImageSelectoooor from "../ImageSelectoooor";
 
 export interface FormProps {
     index: number;
@@ -13,10 +14,11 @@ const StudentEntertainerOfTheYear = ({ index, candidate, setCandidate, setIndex 
     const { data, isLoading, isError } = useGetStudentEntertainerOfTheYearQuery();
     return (
         <div className="flex flex-col gap-8 mt-4 lg:mt-16">
-            <div className="mb-20">
+            <div className="mb-10 flex flex-col gap-6">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
                     Award : Student Entertainer Of The Year
                 </h1>
+                <ImageSelectoooor />
             </div>
 
             <div>

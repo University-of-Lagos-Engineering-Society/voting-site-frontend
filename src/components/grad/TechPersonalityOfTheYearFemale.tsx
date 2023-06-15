@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useGetTechPersonalityOfTheYearFemaleQuery } from "@/redux/slices/grad";
+import ImageSelectoooor from "../ImageSelectoooor";
 
 export interface FormProps {
     index: number;
@@ -13,10 +14,11 @@ const TechPersonalityOfTheYearFemale = ({ index, candidate, setCandidate, setInd
     const { data, isLoading, isError } = useGetTechPersonalityOfTheYearFemaleQuery();
     return (
         <div className="flex flex-col gap-8 mt-4 lg:mt-16">
-            <div className="mb-20">
+            <div className="mb-10 flex flex-col gap-6">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
                     Award : Tech Personality Of The Year Female
                 </h1>
+                <ImageSelectoooor />
             </div>
 
             <div>
