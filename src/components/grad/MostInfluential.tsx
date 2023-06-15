@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useGetMostInfluentialQuery} from "@/redux/slices/grad";
+import { useGetMostInfluentialGradQuery} from "@/redux/slices/grad";
 import ImageSelectoooor from "../ImageSelectoooor";
 
 export interface FormProps {
@@ -16,7 +16,7 @@ const MostInfluential = ({
   setCandidate,
   setIndex,
 }: FormProps) => {
-  const { data, isLoading, isError } = useGetMostInfluentialQuery();
+  const { data, isLoading, isError } = useGetMostInfluentialGradQuery();
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
       <div className="mb-10 flex flex-col gap-6">

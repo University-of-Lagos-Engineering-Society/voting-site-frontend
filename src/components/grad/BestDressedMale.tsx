@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useGetBestDressedMaleQuery } from "@/redux/slices/grad";
+import { useGetBestDressedMaleGradQuery } from "@/redux/slices/grad";
 import ImageSelectoooor from "../ImageSelectoooor";
 
 export interface FormProps {
@@ -11,7 +11,7 @@ export interface FormProps {
 }
 
 const BestDressedMale = ({ index, candidate, setCandidate, setIndex }: FormProps) => {
-    const { data, isLoading, isError } = useGetBestDressedMaleQuery();
+    const { data, isLoading, isError } = useGetBestDressedMaleGradQuery();
     return (
         <div className="flex flex-col gap-8 mt-4 lg:mt-16">
             <div className="mb-10 flex flex-col gap-6">

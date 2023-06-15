@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useGetLifeOfThePartyQuery} from "@/redux/slices/grad";
+import { useGetLifeOfThePartyGradQuery} from "@/redux/slices/grad";
 import ImageSelectoooor from "../ImageSelectoooor";
 
 export interface FormProps {
@@ -16,7 +16,7 @@ const LifeOfTheParty = ({
   setCandidate,
   setIndex,
 }: FormProps) => {
-  const { data, isLoading, isError } = useGetLifeOfThePartyQuery();
+  const { data, isLoading, isError } = useGetLifeOfThePartyGradQuery();
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
       <div className="mb-10 flex flex-col gap-6">

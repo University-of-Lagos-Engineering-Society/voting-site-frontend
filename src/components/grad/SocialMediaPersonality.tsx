@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useGetSocialMediaPersonalityQuery } from "@/redux/slices/grad";
+import { useGetSocialMediaPersonalityGradQuery } from "@/redux/slices/grad";
 import ImageSelectoooor from "../ImageSelectoooor";
 
 export interface FormProps {
@@ -11,7 +11,7 @@ export interface FormProps {
 }
 
 const SocialMediaPersonality = ({ index, candidate, setCandidate, setIndex }: FormProps) => {
-    const { data, isLoading, isError } = useGetSocialMediaPersonalityQuery();
+    const { data, isLoading, isError } = useGetSocialMediaPersonalityGradQuery();
     return (
         <div className="flex flex-col gap-8 mt-4 lg:mt-16">
             <div className="mb-10 flex flex-col gap-6">

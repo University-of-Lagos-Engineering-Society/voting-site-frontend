@@ -12,6 +12,7 @@ export interface FormProps {
 
 const SocialiteOfTheYear = ({ index, candidate, setCandidate, setIndex }: FormProps) => {
   const { data, isLoading, isError } = useGetSocialiteOfTheYearQuery();
+  console.log(data);
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
       <div className="mb-10 flex flex-col gap-6">

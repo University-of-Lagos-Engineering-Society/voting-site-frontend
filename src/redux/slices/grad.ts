@@ -3,7 +3,7 @@ import { api } from "../api";
 const gradApi = api.injectEndpoints({
   endpoints: (builder) => ({
 
-    getSocialiteOfTheYear: builder.query<any, void>({
+    getSocialiteOfTheYearGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -17,7 +17,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getLifeOfTheParty: builder.query<any, void>({
+    getLifeOfThePartyGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -32,7 +32,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getMostHandsome: builder.query<any, void>({
+    getMostHandsomeGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -47,7 +47,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getMostBeautiful: builder.query<any, void>({
+    getMostBeautifulGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -62,7 +62,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getMostInfluential: builder.query<any, void>({
+    getMostInfluentialGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -77,7 +77,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getMostPopular: builder.query<any, void>({
+    getMostPopularGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -92,7 +92,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getBestDressedFemale: builder.query<any, void>({
+    getBestDressedFemaleGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -107,7 +107,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getBestDressedMale: builder.query<any, void>({
+    getBestDressedMaleGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -122,7 +122,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getCoupleOfTheYear: builder.query<any, void>({
+    getCoupleOfTheYearGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -137,7 +137,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getTechPersonalityOfTheYearMale: builder.query<any, void>({
+    getTechPersonalityOfTheYearMaleGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -152,7 +152,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getTechPersonalityOfTheYearFemale: builder.query<any, void>({
+    getTechPersonalityOfTheYearFemaleGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -167,7 +167,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getEmergingEntrepreneur: builder.query<any, void>({
+    getEmergingEntrepreneurGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -182,7 +182,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getStartupVisionaryAward: builder.query<any, void>({
+    getStartupVisionaryAwardGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -197,7 +197,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getSocialMediaPersonality: builder.query<any, void>({
+    getSocialMediaPersonalityGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -212,7 +212,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getStudentEntertainerOfTheYear: builder.query<any, void>({
+    getStudentEntertainerOfTheYearGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -227,7 +227,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getMostVersatile: builder.query<any, void>({
+    getMostVersatileGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -242,7 +242,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getSocialImpactAward: builder.query<any, void>({
+    getSocialImpactAwardGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -257,7 +257,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getOutstandingAcademicPerformanceAward: builder.query<any, void>({
+    getOutstandingAcademicPerformanceAwardGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -272,7 +272,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getULESSportPersonalityOfTheYearMale: builder.query<any, void>({
+    getULESSportPersonalityOfTheYearMaleGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -287,7 +287,7 @@ const gradApi = api.injectEndpoints({
       },
     }),
 
-    getULESSportPersonalityOfTheYearFemale: builder.query<any, void>({
+    getULESSportPersonalityOfTheYearFemaleGrad: builder.query<any, void>({
       query: () => {
         return {
           url: `/nominees`,
@@ -305,24 +305,24 @@ const gradApi = api.injectEndpoints({
 });
 
 
-export const { useGetSocialiteOfTheYearQuery,
-  useGetLifeOfThePartyQuery,
-  useGetCoupleOfTheYearQuery,
-  useGetBestDressedFemaleQuery,
-  useGetBestDressedMaleQuery,
-  useGetMostVersatileQuery,
-  useGetOutstandingAcademicPerformanceAwardQuery,
-  useGetSocialImpactAwardQuery,
-  useGetSocialMediaPersonalityQuery,
-  useGetStartupVisionaryAwardQuery,
-  useGetStudentEntertainerOfTheYearQuery,
-  useGetEmergingEntrepreneurQuery,
-  useGetMostBeautifulQuery,
-  useGetMostHandsomeQuery,
-  useGetMostInfluentialQuery,
-  useGetMostPopularQuery,
-  useGetTechPersonalityOfTheYearFemaleQuery,
-  useGetTechPersonalityOfTheYearMaleQuery,
-  useGetULESSportPersonalityOfTheYearFemaleQuery,
-  useGetULESSportPersonalityOfTheYearMaleQuery
+export const { useGetSocialiteOfTheYearGradQuery,
+  useGetLifeOfThePartyGradQuery,
+  useGetCoupleOfTheYearGradQuery,
+  useGetBestDressedFemaleGradQuery,
+  useGetBestDressedMaleGradQuery,
+  useGetMostVersatileGradQuery,
+  useGetOutstandingAcademicPerformanceAwardGradQuery,
+  useGetSocialImpactAwardGradQuery,
+  useGetSocialMediaPersonalityGradQuery,
+  useGetStartupVisionaryAwardGradQuery,
+  useGetStudentEntertainerOfTheYearGradQuery,
+  useGetEmergingEntrepreneurGradQuery,
+  useGetMostBeautifulGradQuery,
+  useGetMostHandsomeGradQuery,
+  useGetMostInfluentialGradQuery,
+  useGetMostPopularGradQuery,
+  useGetTechPersonalityOfTheYearFemaleGradQuery,
+  useGetTechPersonalityOfTheYearMaleGradQuery,
+  useGetULESSportPersonalityOfTheYearFemaleGradQuery,
+  useGetULESSportPersonalityOfTheYearMaleGradQuery
 } = gradApi;
