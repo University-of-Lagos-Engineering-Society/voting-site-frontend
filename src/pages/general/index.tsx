@@ -194,15 +194,15 @@ const GeneralCategory = () => {
                   setCandidate={setFaceOfYearThree}
                 />
               )}
-              {index === 14 && (
+              {/*index === 14 && (
                 <LecturerOfTheYear
                   index={index}
                   setIndex={setIndex}
                   candidate={lecturerOfTheYear}
                   setCandidate={setLecturerOfTheYear}
                 />
-              )}
-              {index === 15 && (
+              )*/}
+              {index === 14 && (
                 <RookieOfTheYear
                   index={index}
                   setIndex={setIndex}
@@ -210,7 +210,7 @@ const GeneralCategory = () => {
                   setCandidate={setRookieOfTheYear}
                 />
               )}
-              {index === 16 && (
+              {index === 15 && (
                 <SophomoreOfTheYear
                   index={index}
                   setIndex={setIndex}
@@ -218,7 +218,7 @@ const GeneralCategory = () => {
                   setCandidate={setSophomoreOfTheYear}
                 />
               )}
-              {index === 17 && (
+              {index === 16 && (
                 <ULESPersonOfTheYearAward
                   index={index}
                   setIndex={setIndex}
@@ -226,7 +226,7 @@ const GeneralCategory = () => {
                   setCandidate={setULESPersonOfTheYearAward}
                 />
               )}
-              {index === 18 && (
+              {index === 17 && (
                 <ULESTrailblazerAward
                   index={index}
                   setIndex={setIndex}
@@ -234,7 +234,7 @@ const GeneralCategory = () => {
                   setCandidate={setULESTrailblazerAward}
                 />
               )}
-              {index === 19 && (
+              {index === 18 && (
                 <ULESVolunteerOfTheYearAward
                   index={index}
                   setIndex={setIndex}
