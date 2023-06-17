@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useGetExcoBodytOfTheYearQuery } from "@/redux/slices/general";
+import ImageSelectoooor from "../ImageSelectoooor";
 
 export interface FormProps {
   index: number;
@@ -16,23 +17,32 @@ const ExcoBodytOfTheYear = ({
   setIndex,
 }: FormProps) => {
   const { data, isLoading, isError } = useGetExcoBodytOfTheYearQuery();
-  if (isLoading) return <div>Loading...</div>;
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
-      <div className="mb-20">
+      <div className="mb-10 flex flex-col gap-6">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
           Award : Exco Body of the Year
         </h1>
+        <ImageSelectoooor />
       </div>
 
-      <div>
-        <p className="work-sans text-xl lg:text-2xl">
+      <div className="w-full flex flex-col lg:flex-row items-center justify-between">
+        <div>
+          <p className="work-sans text-xl lg:text-2xl">
           Cast your vote for the Exco Body of the Year
         </p>
         <p className="work-sans italic text-sm">
           You can only select one option.
         </p>
-      </div>
+        </div>
+        </div>
+
+        {isLoading && (
+          <div className="w-full h-full flex items-center justify-center mt-10 lg:mt-20">
+          {/* a spinner */}
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-200"></div>
+        </div>
+      )}
 
       {data && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-7xl w-full mx-auto px-4 pb-8 overflow-y-scroll">
@@ -68,7 +78,7 @@ interface CardProps {
 
 // card for the nominees
 const Card = ({ index, candidate, name, handleClick }: CardProps) => {
-  let selected = candidate === name;
+  let selected = candidate?.name === name;
   const _handleClick = () => {
     handleClick();
   };
