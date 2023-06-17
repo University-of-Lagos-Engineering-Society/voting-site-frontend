@@ -1,0 +1,23 @@
+export { default as DefaultBanner } from "./Default banner.png";
+export { default as EntrepeneurOfTheYear } from "./entrpreneur of the year.png";
+export { default as ExcoOfTheYear } from "./Exco of the year.png";
+export { default as FaceOfYear3 } from "./Face of year 3.png";
+export { default as FaceOfYear4 } from "./Face of year 4.png";
+export { default as FinalistOfTheYear } from "./Finalist of the year.png";
+export { default as MostBeautifulGrad }  from "./Most beautiful - graduate.png";
+export { default as MostBeautifulUndergrad } from "./Most beautiful - Undergraduate.png";
+export { default as MostFashionableFemaleUndergrad } from "./Most fashionable female - Undergraduate.png";
+export { default as MostFashionableMaleUndergrad } from "./Most fashionable male - Undergraduate.png";
+export { default as MostHandsomeUndergrad } from "./Most handsome - Undergraduate.png";
+export { default as MostInfluentialUndergrad } from "./Most Influential - Undergraduate.png";
+export { default as MostInfluentialGrad } from "./Most influential - graduate.png";
+export { default as MostPopularUndergrad } from "./Most Popular - Undergraduate.png";
+export { default as MostPopularGrad } from "./Most popular - graduate.png";
+export { default as RookieFemale } from "./Rookie female.png"
+export { default as RookieMale } from "./Rookie male.png";
+export { default as SocialiteOfTheYear } from "./Socialite of the year.png";
+export { default as SophomoreOfTheYear } from "./Sophomore of the year.png";
+export { default as TrailBlazerOfTheYear } from "./Trailblazer of the year.png";
+export { default as ULESMVP } from "./ULES MVP.png";
+export { default as ULESPersonOfTheYear } from "./ULES Person of the year.png";
+export { default as ULESVolunteerofTheYear } from "./ULES Volunteer of the year.png";
