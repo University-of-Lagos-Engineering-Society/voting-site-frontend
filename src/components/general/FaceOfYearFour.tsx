@@ -24,7 +24,7 @@ const FaceOfYearFour = ({
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
           Award : Face of Year Four
         </h1>
-        <ImageSelectoooor image_name="FaceOfYear3" />
+        <ImageSelectoooor image_name="FaceOfYear4" />
       </div>
 
       <div className="w-full flex flex-col lg:flex-row items-center justify-between">
