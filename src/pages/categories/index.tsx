@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Categories = () => {
   return (
-    <main className="relative flex min-h-screen xl:h-screen overflow-hidden flex-col bg-[#141414] px-4 py-6 text-white">
+    <main className="relative flex min-h-screen flex-col bg-[#141414] px-4 py-6 text-white">
       <div className="max-w-7xl mx-auto w-full">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro mt-6 pb-4 lg:pb-6">
           Vote by Categories
@@ -18,6 +18,8 @@ const Categories = () => {
           <Card title="Graduate" number={20} to="/grad" />
           <Card title="Undergraduate" number={15} to="/undergrad" />
           <Card title="General" number={22} to="/general" />
+          <Card title="Results" number={22} to="/results" />
+          
         </div>
         {/* Background */}
         <div className="absolute lg:top-[200px] left-0 w-full h-full z-10">
