@@ -25,7 +25,7 @@ const Categories = () => {
             voted={ules_undergrad}
           />
           <Card title="General" number={22} to="/general" voted={ules_general} />
-          <Card title="Results" view to="/results" voted={false} />
+          <Card title="Results" view to="/categories" voted={false} />
         </div>
         {/* Background */}
         <div className="absolute inset-0 w-full h-full z-10">
@@ -69,8 +69,7 @@ const Card = ({ title, number, to, view, voted }: CardProps) => (
       </h3>
     ) : (
       <div className="text-[#717171]">
-        Tap to
-        {view ? " view" : " vote"}
+        {view ? "Coming soon" : "Tap to vote"}
       </div>
     )}
   </Link>
