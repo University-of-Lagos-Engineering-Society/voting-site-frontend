@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-
+import { useVoteMutation } from "@/redux/slices/voting";
 import SocialiteOfTheYear from "@/components/grad/SocialiteOfTheYear";
 import LifeOfTheParty from "@/components/grad/LifeOfTheParty";
 import CoupleOfTheYear from "@/components/grad/CoupleOfTheYear";
@@ -22,13 +22,21 @@ import TechPersonalityOfTheYearFemale from "@/components/grad/TechPersonalityOfT
 import TechPersonalityOfTheYearMale from "@/components/grad/TechPersonalityOfTheYearMale";
 import ULESSportPersonalityOfTheYearFemale from "@/components/grad/ULESSportPersonalityOfTheYearFemale";
 import ULESSportPersonalityOfTheYearMale from "@/components/grad/ULESSportPersonalityOfTheYearMale";
+import { useDispatch } from "react-redux";
+import { setGrad } from "@/redux/checkerSlices/check";
+import SuccessModal from "@/components/modals/SuccessModal";
 
 type Nominee = {
   _id: string;
+  category: {
+    _id: string;
+  };
 };
-
 const GraduateCategory = () => {
+  const dispatch = useDispatch();
+  const [vote, { isLoading, isSuccess, isError, error }] = useVoteMutation();
   const [index, setIndex] = useState<number>(0);
+    const [voted, setVoted] = useState<boolean>(false);
   const [socialiteOfTheYear, setSocialiteOfTheYear] = useState<Nominee | null>(null);
   const [lifeOfTheParty, setLifeOfTheParty] = useState<Nominee | null>(null);
   const [coupleOfTheYear, setCoupleOfTheYear] = useState<Nominee | null>(null);
@@ -50,30 +58,113 @@ const GraduateCategory = () => {
   const [ulesSportPersonalityOfTheYearFemale, setULESSportPersonalityOfTheYearFemale] = useState<Nominee | null>(null);
   const [ulesSportPersonalityOfTheYearMale, setULESSportPersonalityOfTheYearMale] = useState<Nominee | null>(null);
 
-  const triggerFunction = () => {
-    console.log("socialiteOfTheYear", socialiteOfTheYear?._id);
-    console.log("lifeOfTheParty", lifeOfTheParty?._id);
-    console.log("coupleOfTheYear", coupleOfTheYear?._id);
-    console.log("emergingEntrepreneurOfTheYear", emergingEntrepreneurOfTheYear?._id);
-    console.log("mostInfluential", mostInfluential?._id);
-    console.log("mostPopular", mostPopular?._id);
-    console.log("mostBeautiful", mostBeautiful?._id);
-    console.log("mostHandsome", mostHandsome?._id);
-    console.log("mostVersatile", mostVersatile?._id);
-    console.log("bestDressedFemale", bestDressedFemale?._id);
-    console.log("bestDressedMale", bestDressedMale?._id);
-    console.log("outstandingAcademicPerformanceAward", outstandingAcademicPerformanceAward?._id);
-    console.log("socialImpactAward", socialImpactAward?._id);
-    console.log("socialMediaPersonality", socialMediaPersonality?._id);
-    console.log("startupVisionaryAward", startupVisionaryAward?._id);
-    console.log("studentEntertainerOfTheYear", studentEntertainerOfTheYear?._id);
-    console.log("techPersonalityOfTheYearFemale", techPersonalityOfTheYearFemale?._id);
-    console.log("techPersonalityOfTheYearMale", techPersonalityOfTheYearMale?._id);
-    console.log("ulesSportPersonalityOfTheYearFemale", ulesSportPersonalityOfTheYearFemale?._id);
-    console.log("ulesSportPersonalityOfTheYearMale", ulesSportPersonalityOfTheYearMale?._id);
+  const triggerFunction = async () => {
+    if (isLoading) return;
+    const obj: Record<string, string> = {};
+
+    // Assigning values to the 'obj' object
+    if (socialiteOfTheYear?.category) {
+      obj[socialiteOfTheYear.category._id] = socialiteOfTheYear._id;
+    }
+
+    if (lifeOfTheParty?.category) {
+      obj[lifeOfTheParty.category._id] = lifeOfTheParty._id;
+    }
+
+    if (coupleOfTheYear?.category) {
+      obj[coupleOfTheYear.category._id] = coupleOfTheYear._id;
+    }
+
+    if (emergingEntrepreneurOfTheYear?.category) {
+      obj[emergingEntrepreneurOfTheYear.category._id] =
+        emergingEntrepreneurOfTheYear._id;
+    }
+
+    if (mostInfluential?.category) {
+      obj[mostInfluential.category._id] = mostInfluential._id;
+    }
+
+    if (mostPopular?.category) {
+      obj[mostPopular.category._id] = mostPopular._id;
+    }
+
+    if (mostBeautiful?.category) {
+      obj[mostBeautiful.category._id] = mostBeautiful._id;
+    }
+
+    if (mostHandsome?.category) {
+      obj[mostHandsome.category._id] = mostHandsome._id;
+    }
+
+    if (mostVersatile?.category) {
+      obj[mostVersatile.category._id] = mostVersatile._id;
+    }
+
+    if (bestDressedFemale?.category) {
+      obj[bestDressedFemale.category._id] = bestDressedFemale._id;
+    }
+
+    if (bestDressedMale?.category) {
+      obj[bestDressedMale.category._id] = bestDressedMale._id;
+    }
+
+    if(outstandingAcademicPerformanceAward?.category) {
+      obj[outstandingAcademicPerformanceAward.category._id] = outstandingAcademicPerformanceAward._id;
+    }
+
+    if (socialImpactAward?.category) {
+      obj[socialImpactAward.category._id] = socialImpactAward._id;
+    }
+
+    if (socialMediaPersonality?.category) {
+      obj[socialMediaPersonality.category._id] = socialMediaPersonality._id;
+    }
+
+    if (startupVisionaryAward?.category) {
+      obj[startupVisionaryAward.category._id] = startupVisionaryAward._id;
+    }
+
+    if (studentEntertainerOfTheYear?.category) {
+      obj[studentEntertainerOfTheYear.category._id] = studentEntertainerOfTheYear._id;
+    }
+
+    if (techPersonalityOfTheYearFemale?.category) {
+      obj[techPersonalityOfTheYearFemale.category._id] = techPersonalityOfTheYearFemale._id;
+    }
+
+    if (techPersonalityOfTheYearMale?.category) {
+      obj[techPersonalityOfTheYearMale.category._id] = techPersonalityOfTheYearMale._id;
+    }
+
+    if (ulesSportPersonalityOfTheYearFemale?.category) {
+      obj[ulesSportPersonalityOfTheYearFemale.category._id] = ulesSportPersonalityOfTheYearFemale._id;
+    }
+
+    if (ulesSportPersonalityOfTheYearMale?.category) {
+      obj[ulesSportPersonalityOfTheYearMale.category._id] = ulesSportPersonalityOfTheYearMale._id;
+    }
+
+    console.log("obj", obj);
+
+        try {
+          const payload = {
+            nominees: obj,
+          };
+          const res = await vote(payload).unwrap();
+          dispatch(setGrad());
+          setVoted(true);
+        } catch (error: any) {
+          console.log(error);
+          alert(error);
+        }
+
   };
 
   return (
+    <>
+      <SuccessModal isOpen={voted} closeModal={() => {
+        setVoted(false);
+      }} />
     <main className="relative flex min-h-screen flex-col bg-[#141414] px-4 py-6 text-white">
       <div className="max-w-7xl mx-auto w-full">
         <Link
@@ -249,7 +340,8 @@ const GraduateCategory = () => {
 
         </div>
       </div>
-    </main>
+      </main>
+      </>
   );
 };
 
