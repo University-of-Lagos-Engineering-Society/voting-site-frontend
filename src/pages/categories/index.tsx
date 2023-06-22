@@ -69,8 +69,7 @@ const Card = ({ title, number, to, view, voted }: CardProps) => (
       </h3>
     ) : (
       <div className="text-[#717171]">
-        Tap to
-        {view ? " view" : " vote"}
+        {view ? "Coming soon" : "Tap to vote"}
       </div>
     )}
   </Link>
