@@ -26,6 +26,7 @@ import ULESVolunteerOfTheYearAward from "@/components/general/ULESVolunteerOfThe
 import { useDispatch } from "react-redux";
 import { setGeneral } from "@/redux/checkerSlices/check";
 import SuccessModal from "@/components/modals/SuccessModal";
+import RookieOfTheYearFemale from "@/components/general/RookieOfTheYearFemale";
 
 type Nominee = {
   _id: string;
@@ -69,6 +70,7 @@ const GeneralCategory = () => {
     null
   );
   const [rookieOfTheYear, setRookieOfTheYear] = useState<Nominee | null>(null);
+  const [rookieOfTheYearFemale, setRookieOfTheYearFemale] = useState<Nominee | null>(null);
   const [sophomoreOfTheYear, setSophomoreOfTheYear] = useState<Nominee | null>(
     null
   );
@@ -146,6 +148,10 @@ const GeneralCategory = () => {
         obj[rookieOfTheYear.category._id] = rookieOfTheYear._id;
       }
 
+      if (rookieOfTheYearFemale?.category) {
+        obj[rookieOfTheYearFemale.category._id] = rookieOfTheYearFemale._id;
+      }
+
       if (sophomoreOfTheYear?.category) {
         obj[sophomoreOfTheYear.category._id] = sophomoreOfTheYear._id;
       }
@@ -188,7 +194,8 @@ const GeneralCategory = () => {
           setVoted(false);
         }
         }
-      />
+      /> 
+      
     <main className="relative flex min-h-screen flex-col bg-[#141414] px-4 py-6 text-white">
       <div className="max-w-7xl mx-auto w-full">
         <Link
@@ -327,6 +334,14 @@ const GeneralCategory = () => {
             />
           )}
           {index === 15 && (
+            <RookieOfTheYearFemale
+              index={index}
+              setIndex={setIndex}
+              candidate={rookieOfTheYearFemale}
+              setCandidate={setRookieOfTheYearFemale}
+            />
+          )}
+          {index === 16 && (
             <SophomoreOfTheYear
               index={index}
               setIndex={setIndex}
@@ -334,7 +349,7 @@ const GeneralCategory = () => {
               setCandidate={setSophomoreOfTheYear}
             />
           )}
-          {index === 16 && (
+          {index === 17 && (
             <ULESPersonOfTheYearAward
               index={index}
               setIndex={setIndex}
@@ -342,7 +357,7 @@ const GeneralCategory = () => {
               setCandidate={setULESPersonOfTheYearAward}
             />
           )}
-          {index === 17 && (
+          {index === 18 && (
             <ULESTrailblazerAward
               index={index}
               setIndex={setIndex}
@@ -350,7 +365,7 @@ const GeneralCategory = () => {
               setCandidate={setULESTrailblazerAward}
             />
           )}
-          {index === 18 && (
+          {index === 19 && (
             <ULESVolunteerOfTheYearAward
               index={index}
               setIndex={setIndex}

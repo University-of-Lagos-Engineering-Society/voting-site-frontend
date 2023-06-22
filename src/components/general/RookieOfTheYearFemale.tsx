@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import { useGetULESSportPersonalityOfTheYearMaleQuery } from "@/redux/slices/undergrad";
+import { useGetRookieOfTheYearFemaleQuery } from "@/redux/slices/general";
+
 import ImageSelectoooor from "../ImageSelectoooor";
 
 export interface FormProps {
@@ -10,25 +11,31 @@ export interface FormProps {
   setIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const ULESSportPersonalityOfTheYearMale = ({ index, candidate, setCandidate, setIndex }: FormProps) => {
-  const { data, isLoading, isError } = useGetULESSportPersonalityOfTheYearMaleQuery();
+const RookieOfTheYearFemale= ({
+  index,
+  candidate,
+  setCandidate,
+  setIndex,
+}: FormProps) => {
+  const { data, isLoading, isError } = useGetRookieOfTheYearFemaleQuery();
+  
   return (
     <div className="flex flex-col gap-8 mt-4 lg:mt-16">
       <div className="mb-10 flex flex-col gap-6">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
-          Award : ULES Male Sport Personality of the Year
+          Award : Rookie Of The Year Female
         </h1>
-        <ImageSelectoooor image_name="ULESSportPersonalityOfTheYearMale" />
+        <ImageSelectoooor />
       </div>
 
       <div className="w-full flex flex-col lg:flex-row items-center justify-between">
         <div>
           <p className="work-sans text-xl lg:text-2xl">
-            Cast your vote for the ULES Male Sport Personality of the Year
-          </p>
-          <p className="work-sans italic text-sm">
-            You can only select one option.
-          </p>
+          Cast your vote for the Rookie Of The Year Female
+        </p>
+        <p className="work-sans italic text-sm">
+          You can only select one option.
+        </p>
         </div>
 
         <div className="flex items-center lg:justify-between w-full md:w-fit gap-4 lg:gap-8">
@@ -61,10 +68,10 @@ const ULESSportPersonalityOfTheYearMale = ({ index, candidate, setCandidate, set
           </button>
 
         </div>
-      </div>
+        </div>
 
-      {isLoading && (
-        <div className="w-full h-full flex items-center justify-center mt-10 lg:mt-20">
+        {isLoading && (
+          <div className="w-full h-full flex items-center justify-center mt-10 lg:mt-20">
           {/* a spinner */}
           <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-200"></div>
         </div>
@@ -93,11 +100,11 @@ const ULESSportPersonalityOfTheYearMale = ({ index, candidate, setCandidate, set
   );
 };
 
-export default ULESSportPersonalityOfTheYearMale;
+export default RookieOfTheYearFemale;
 
 interface CardProps {
   index: number;
-  name: string;
+  name: any;
   candidate: any;
   handleClick: () => void;
 }
@@ -113,9 +120,7 @@ const Card = ({ index, candidate, name, handleClick }: CardProps) => {
       <div className="border py-1 px-3 flex items-center rounded-lg">
         {index + 1}.
       </div>
-      <div className="">
-        {name}
-      </div>
+      <div className="">{name}</div>
       <div
         onClick={_handleClick}
         className={`border

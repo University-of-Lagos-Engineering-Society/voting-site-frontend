@@ -24,7 +24,7 @@ const Categories = () => {
             to="/undergrad"
             voted={ules_undergrad}
           />
-          <Card title="General" number={22} to="/general" voted={ules_general} />
+          <Card title="General" number={23} to="/general" voted={ules_general} />
           <Card title="Results" view to="/categories" voted={false} />
         </div>
         {/* Background */}
