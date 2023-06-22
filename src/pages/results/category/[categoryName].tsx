@@ -63,10 +63,12 @@ const CategoryResults = () => {
                     </div>
 
                     <div className="w-full py-12 px-4 bg-card cursor-pointer z-50 flex flex-col justify-around items-start gap-12">
-                        {dummyData.map(({ name, votes, color }) => {
+                        {dummyData.map(({ name, votes, color }, i) => {
                             return (
 
-                                <div className="flex items-start gap-6 ml-8">
+                                <div
+                                    key={i}
+                                    className="flex items-start gap-6 ml-8">
                                     <div className="flex flex-col gap-5 items-start justify-between">
                                         <div className="bg-white h-20 w-20 rounded-full text-[#313131] flex items-center justify-center font-bold text-[24px]">{votes}</div>
                                         <div className="text-[12px]">{name}</div>
