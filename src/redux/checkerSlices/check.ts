@@ -1,16 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  grad:
+  ules_grad:
     typeof window !== "undefined" && localStorage.getItem("grad") === "true"
       ? true
       : false,
-  undergrad:
+  ules_undergrad:
     typeof window !== "undefined" &&
     localStorage.getItem("undergrad") === "true"
       ? true
       : false,
-  general:
+  ules_general:
     typeof window !== "undefined" && localStorage.getItem("general") === "true"
       ? true
       : false,
@@ -21,15 +21,15 @@ const checkSlice = createSlice({
   initialState,
   reducers: {
     setGrad: (state) => {
-      state.grad = true;
+      state.ules_grad = true;
       localStorage.setItem("grad", "true");
     },
     setUndergrad: (state) => {
-      state.undergrad = true;
+      state.ules_undergrad = true;
       localStorage.setItem("undergrad", "true");
     },
     setGeneral: (state) => {
-      state.general = true;
+      state.ules_general = true;
       localStorage.setItem("general", "true");
     },
   },
