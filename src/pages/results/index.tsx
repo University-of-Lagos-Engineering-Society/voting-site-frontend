@@ -49,9 +49,9 @@ const Results = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-3/4">
+            <div className="w-full lg:w-3/4">
 
-                {activeTab === 0 && <div className="flex flex-col gap-8 mt-4 lg:mt-16">
+                {activeTab === 0 && <div className="flex flex-col gap-8 my-4 lg:my-16 w-full">
                     <Card awardName="Socialite Of The Year" numOfNoms={9} numOfVotes={78} to="/" />
                     <Card awardName="Life Of The Party" numOfNoms={9} numOfVotes={25} to="/" />
                     <Card awardName="Couple Of The Year" numOfNoms={4} numOfVotes={92} to="/" />
@@ -75,7 +75,7 @@ const Results = () => {
                 </div>}
 
                 {activeTab === 1 &&
-                    <div className="flex flex-col gap-8 mt-4 lg:mt-16">
+                    <div className="flex flex-col gap-8 my-4 lg:my-16 w-full">
                         <Card awardName="Clique Of The Year" numOfNoms={10} numOfVotes={101} to="/" />
                         <Card awardName="Creative Of The Year" numOfNoms={10} numOfVotes={79} to="/" />
                         <Card awardName="Most Fashionable Female" numOfNoms={9} numOfVotes={42} to="/" />
@@ -95,7 +95,7 @@ const Results = () => {
 
                     </div>}
                 {activeTab === 2 && 
-                <div className="flex flex-col gap-8 mt-4 lg:mt-16">
+                <div className="flex flex-col gap-8 my-4 lg:my-16 w-full">
                     <Card awardName="Exco Body Of The Year" numOfNoms={7} numOfVotes={85} to="/" />
                     <Card awardName="Exco Of The Year" numOfNoms={2} numOfVotes={42} to="/" />
                     <Card awardName="Face Of Department BME" numOfNoms={5} numOfVotes={127} to="/" />
@@ -121,7 +121,7 @@ const Results = () => {
         </div>
 
         {/* Background */}
-        <div className="absolute lg:top-[200px] left-0 w-full h-full z-10">
+        <div className="absolute inset-0 left-0 w-full h-full z-10">
           <Image
             src={Background}
             alt="ULES Logo"
@@ -143,10 +143,15 @@ interface CardProps {
 }
 
 const Card = ({ awardName, numOfNoms, to }: CardProps) => (
-  <Link href={to} className="w-full py-6 px-8 bg-card cursor-pointer z-50">
-      <div className="flex flex-row gap-4 lg:gap-6 mb-6 items-center">
-          <h1 className="text-2xl md:text-3xl border-r-2 border-white pr-6">{awardName}</h1>
-          <h2 className="text-[#717171] work-sans">{numOfNoms} Nominees</h2>
-      </div>
+  <Link
+    href={to}
+    className="w-full py-6 px-8 bg-card cursor-pointer z-50 border"
+  >
+    <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 mb-6 items-center">
+      <h1 className="text-2xl md:text-3xl border-b-2 lg:border-b-0 lg:border-r-2 border-white pr-6 text-gray-200">
+        {awardName}
+      </h1>
+      <h2 className="text-[#717171] work-sans">{numOfNoms} Nominees</h2>
+    </div>
   </Link>
 );

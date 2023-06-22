@@ -180,7 +180,9 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee?.category?.name === "G-Emerging Entrepreneur";
+          return (
+            nominee?.category?.name === "G-Emerging Entrepreneur of the year"
+          );
         });
       },
     }),
@@ -255,7 +257,7 @@ const gradApi = api.injectEndpoints({
 
       transformResponse: (response: any) => {
         return response.filter((nominee: any) => {
-          return nominee?.category?.name === "G-Social Impact Award";
+          return nominee?.category?.name === "G-Social Impact award";
         });
       },
     }),

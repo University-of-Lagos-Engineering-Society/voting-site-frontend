@@ -38,12 +38,14 @@ export default function Home() {
               >
                 Vote now
               </Link>
-              <Link
-                href="/"
-                className="w-full lg:w-fit  border border-[#c7291f] font-bold text-[#c7291f] flex justify-center items-center gap-1 px-12 py-3 rounded-full"
+              <a
+                href="https://wa.link/3tapha"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full lg:w-fit border border-[#c7291f] font-bold text-[#c7291f] flex justify-center items-center gap-1 px-12 py-3 rounded-full"
               >
                 Buy Tickets
-              </Link>
+              </a>
             </div>
           </div>
           {/* Mobile Buttons */}

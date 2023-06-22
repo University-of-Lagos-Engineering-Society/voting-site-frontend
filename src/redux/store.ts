@@ -1,7 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
+import check from "./checkerSlices/check";
 import { api } from "./api";
 export const store = configureStore({
   reducer: {
+    check,
     [api.reducerPath]: api.reducer,
   },
   middleware: (getDefaultMiddleware) => {
