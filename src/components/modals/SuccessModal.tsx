@@ -7,9 +7,10 @@ import { useRouter } from "next/router";
 interface Props {
   isOpen: boolean;
   closeModal: () => void;
+  categoryType: string;
 }
 
-const SuccessModal = ({ isOpen, closeModal }: Props) => {
+const SuccessModal = ({ isOpen, closeModal, categoryType }: Props) => {
   const router = useRouter();
   const handleVerify = (e: any) => {
     e.preventDefault();
@@ -69,7 +70,7 @@ const SuccessModal = ({ isOpen, closeModal }: Props) => {
                     </div>
                   </div>
                   <h1 className="text-2xl sat-norm text-white text-center max-w-[200px] mx-auto">
-                    You have voted successfully
+                    You have voted successfully for the {categoryType} category
                   </h1>
 
                   <div className="flex flex-col gap-4 items-center w-full max-w-[300px] mx-auto my-8">
@@ -77,7 +78,7 @@ const SuccessModal = ({ isOpen, closeModal }: Props) => {
                       href="/categories"
                       className="w-full bg-[#c7291f] text-white font-bold rounded-full flex justify-center items-center gap-1 px-12 py-3"
                     >
-                      Vote again
+                      Proceed
                     </Link>
                     <a
                       href="https://wa.link/3tapha"

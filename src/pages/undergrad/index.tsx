@@ -151,14 +151,10 @@ const UndergraduateCategory = () => {
 
   };
 
-
-
-
-
-
   return (
     <>
       <SuccessModal
+      categoryType="Undergraduate"
         isOpen={voted}
         closeModal={() => {
           setVoted(false);

@@ -189,6 +189,7 @@ const GeneralCategory = () => {
   return (
     <>
       <SuccessModal
+      categoryType="General"
         isOpen={voted}
         closeModal={() => {
           setVoted(false);
