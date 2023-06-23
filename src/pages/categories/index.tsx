@@ -17,7 +17,7 @@ const Categories = () => {
         </h3>
 
         <div className="flex flex-col gap-8 mt-4 lg:mt-16">
-          <Card title="Graduate" number={20} to="/grad" voted={ules_grad} />
+          <Card title="Graduate" number={21} to="/grad" voted={ules_grad} />
           <Card
             title="Undergraduate"
             number={15}

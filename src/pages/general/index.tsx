@@ -183,7 +183,7 @@ const GeneralCategory = () => {
       dispatch(setGeneral());
       setVoted(true);
     } catch (error: any) {
-      alert(error.error);
+      alert(error.error)
     }
   };
 

@@ -59,11 +59,6 @@ const ULESSportPersonalityOfTheYearMale = ({ index, candidate, setCandidate, set
               name={c.name}
               handleClick={() => {
                 setCandidate(c);
-                //after one second, go to the next page
-                setTimeout(() => {
-                  // setIndex(index + 1);
-                  triggerFunction();
-                }, 1000);
               }}
             />
           ))}

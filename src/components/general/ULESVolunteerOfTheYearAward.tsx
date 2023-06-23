@@ -68,10 +68,6 @@ const ULESVolunteerOfTheYearAward = ({
               name={c.name}
               handleClick={() => {
                 setCandidate(c);
-                //after one second, go to the next page
-                setTimeout(() => {
-                  setIndex(index + 1);
-                }, 1000);
               }}
             />
           ))}

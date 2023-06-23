@@ -313,6 +313,22 @@ const gradApi = api.injectEndpoints({
         });
       },
     }),
+
+    getCreativeOfTheYearGrad: builder.query<any, void>({
+      query: () => {
+        return {
+          url: `/nominees`,
+          method: "GET",
+        };
+      },
+
+      transformResponse: (response: any) => {
+        return response.filter((nominee: any) => {
+          return nominee?.category?.name === "G-Creative of the year";
+        });
+      },
+    }),
+
   }),
   // @ts-ignore
   overrideExisting: module.hot?.status() === "apply",
@@ -338,5 +354,6 @@ export const { useGetSocialiteOfTheYearGradQuery,
   useGetTechPersonalityOfTheYearFemaleGradQuery,
   useGetTechPersonalityOfTheYearMaleGradQuery,
   useGetULESSportPersonalityOfTheYearFemaleGradQuery,
-  useGetULESSportPersonalityOfTheYearMaleGradQuery
+  useGetULESSportPersonalityOfTheYearMaleGradQuery,
+  useGetCreativeOfTheYearGradQuery,
 } = gradApi;
