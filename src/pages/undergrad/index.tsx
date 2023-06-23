@@ -66,7 +66,6 @@ const UndergraduateCategory = () => {
     useState<Nominee | null>(null);
 
   const triggerFunction = async () => {
-    if(isLoading) return;
     const obj: Record<string, string> = {};
     {
       if (socialiteOfTheYear?.category?._id) {
@@ -139,10 +138,11 @@ const UndergraduateCategory = () => {
 
     try {
       const payload = {
-        "nominees": obj,
+        nominees: obj,
       };
       const res = await vote(payload).unwrap();
       dispatch(setUndergrad());
+      setVoted(true);
     } catch (error: any) {
       alert(error);
     }
@@ -158,8 +158,9 @@ const UndergraduateCategory = () => {
         isOpen={voted}
         closeModal={() => {
           setVoted(false);
-        }}
-      />
+        }
+        }
+      /> 
       <main className="re lative flex min-h-screen flex-col bg-[#141414] px-4 py-6 text-white">
         <div className="max-w-7xl mx-auto w-full">
           <Link
