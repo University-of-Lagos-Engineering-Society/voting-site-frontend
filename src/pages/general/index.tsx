@@ -17,6 +17,7 @@ import FaceOfDepartmentSSG from "@/components/general/FaceOfDepartmentSSG";
 import FaceOfDepartmentSVY from "@/components/general/FaceOfDepartmentSVY";
 import FaceOfYearFour from "@/components/general/FaceOfYearFour";
 import FaceOfYearThree from "@/components/general/FaceOfYearThree";
+import MVPOfTheYear from "@/components/general/MVPOfTheYear";
 import LecturerOfTheYear from "@/components/general/LecturerOfTheYear";
 import RookieOfTheYear from "@/components/general/RookieOfTheYear";
 import SophomoreOfTheYear from "@/components/general/SophomoreOfTheYear";
@@ -68,6 +69,9 @@ const GeneralCategory = () => {
   const [faceOfYearFour, setFaceOfYearFour] = useState<Nominee | null>(null);
   const [faceOfYearThree, setFaceOfYearThree] = useState<Nominee | null>(null);
   const [lecturerOfTheYear, setLecturerOfTheYear] = useState<Nominee | null>(
+    null
+  );
+  const [mvpOfTheYear, setMvpOfTheYear] = useState<Nominee | null>(
     null
   );
   const [rookieOfTheYear, setRookieOfTheYear] = useState<Nominee | null>(null);
@@ -167,6 +171,10 @@ const GeneralCategory = () => {
         obj[ulesTrailblazerAward.category._id] = ulesTrailblazerAward._id;
       }
 
+      if (mvpOfTheYear?.category) {
+        obj[mvpOfTheYear.category._id] = mvpOfTheYear._id;
+      }
+
       if (ulesVolunteerOfTheYearAward?.category) {
         obj[ulesVolunteerOfTheYearAward.category._id] =
           ulesVolunteerOfTheYearAward._id;
@@ -190,136 +198,136 @@ const GeneralCategory = () => {
   return (
     <>
       <SuccessModal
-      categoryType="General"
+        categoryType="General"
         isOpen={voted}
         closeModal={() => {
           setVoted(false);
         }
         }
-      /> 
-      
-    <main className="relative flex min-h-screen flex-col bg-[#141414] px-4 py-6 text-white">
-      <div className="max-w-7xl mx-auto w-full">
-        <Link
-          href={"/categories"}
-          className="text-sm lg:text-xl font-medium text-[#E1544A] work-sans mt-6 pb-4 lg:pb-6"
-        >
-          GENERAL CATEGORY
-        </Link>
-        <div>
-          {index === 0 && (
-            <ExcoBodytOfTheYear
-              index={index}
-              setIndex={setIndex}
-              candidate={excoBodytOfTheYear}
-              setCandidate={setExcoBodytOfTheYear}
-            />
-          )}
-          {index === 1 && (
-            <ExcoOfTheYear
-              index={index}
-              setIndex={setIndex}
-              candidate={excoOfTheYear}
-              setCandidate={setExcoOfTheYear}
-            />
-          )}
-          {index === 2 && (
-            <FaceOfDepartmentBME
-              index={index}
-              setIndex={setIndex}
-              candidate={faceOfDepartmentBME}
-              setCandidate={setFaceOfDepartmentBME}
-            />
-          )}
-          {index === 3 && (
-            <FaceOfDepartmentCEG
-              index={index}
-              setIndex={setIndex}
-              candidate={faceOfDepartmentCEG}
-              setCandidate={setFaceOfDepartmentCEG}
-            />
-          )}
-          {index === 4 && (
-            <FaceOfDepartmentCHG
-              index={index}
-              setIndex={setIndex}
-              candidate={faceOfDepartmentCHG}
-              setCandidate={setFaceOfDepartmentCHG}
-            />
-          )}
-          {index === 5 && (
-            <FaceOfDepartmentCPE
-              index={index}
-              setIndex={setIndex}
-              candidate={faceOfDepartmentCPE}
-              setCandidate={setFaceOfDepartmentCPE}
-            />
-          )}
-          {index === 6 && (
-            <FaceOfDepartmentEEG
-              index={index}
-              setIndex={setIndex}
-              candidate={faceOfDepartmentEEG}
-              setCandidate={setFaceOfDepartmentEEG}
-            />
-          )}
-          {index === 7 && (
-            <FaceOfDepartmentMEG
-              index={index}
-              setIndex={setIndex}
-              candidate={faceOfDepartmentMEG}
-              setCandidate={setFaceOfDepartmentMEG}
-            />
-          )}
-          {index === 8 && (
-            <FaceOfDepartmentMME
-              index={index}
-              setIndex={setIndex}
-              candidate={faceOfDepartmentMME}
-              setCandidate={setFaceOfDepartmentMME}
-            />
-          )}
-          {index === 9 && (
-            <FaceOfDepartmentPGG
-              index={index}
-              setIndex={setIndex}
-              candidate={faceOfDepartmentPGG}
-              setCandidate={setFaceOfDepartmentPGG}
-            />
-          )}
-          {index === 10 && (
-            <FaceOfDepartmentSSG
-              index={index}
-              setIndex={setIndex}
-              candidate={faceOfDepartmentSSG}
-              setCandidate={setFaceOfDepartmentSSG}
-            />
-          )}
-          {index === 11 && (
-            <FaceOfDepartmentSVY
-              index={index}
-              setIndex={setIndex}
-              candidate={faceOfDepartmentSVY}
-              setCandidate={setFaceOfDepartmentSVY}
-            />
-          )}
-          {index === 12 && (
-            <FaceOfYearFour
-              index={index}
-              setIndex={setIndex}
-              candidate={faceOfYearFour}
-              setCandidate={setFaceOfYearFour}
-            />
-          )}
-          {index === 13 && (
-            <FaceOfYearThree
-              index={index}
-              setIndex={setIndex}
-              candidate={faceOfYearThree}
-              setCandidate={setFaceOfYearThree}
-            />
-          )}
-          {/*index === 14 && (
+      />
+
+      <main className="relative flex min-h-screen flex-col bg-[#141414] px-4 py-6 text-white">
+        <div className="max-w-7xl mx-auto w-full">
+          <Link
+            href={"/categories"}
+            className="text-sm lg:text-xl font-medium text-[#E1544A] work-sans mt-6 pb-4 lg:pb-6"
+          >
+            GENERAL CATEGORY
+          </Link>
+          <div>
+            {index === 0 && (
+              <ExcoBodytOfTheYear
+                index={index}
+                setIndex={setIndex}
+                candidate={excoBodytOfTheYear}
+                setCandidate={setExcoBodytOfTheYear}
+              />
+            )}
+            {index === 1 && (
+              <ExcoOfTheYear
+                index={index}
+                setIndex={setIndex}
+                candidate={excoOfTheYear}
+                setCandidate={setExcoOfTheYear}
+              />
+            )}
+            {index === 2 && (
+              <FaceOfDepartmentBME
+                index={index}
+                setIndex={setIndex}
+                candidate={faceOfDepartmentBME}
+                setCandidate={setFaceOfDepartmentBME}
+              />
+            )}
+            {index === 3 && (
+              <FaceOfDepartmentCEG
+                index={index}
+                setIndex={setIndex}
+                candidate={faceOfDepartmentCEG}
+                setCandidate={setFaceOfDepartmentCEG}
+              />
+            )}
+            {index === 4 && (
+              <FaceOfDepartmentCHG
+                index={index}
+                setIndex={setIndex}
+                candidate={faceOfDepartmentCHG}
+                setCandidate={setFaceOfDepartmentCHG}
+              />
+            )}
+            {index === 5 && (
+              <FaceOfDepartmentCPE
+                index={index}
+                setIndex={setIndex}
+                candidate={faceOfDepartmentCPE}
+                setCandidate={setFaceOfDepartmentCPE}
+              />
+            )}
+            {index === 6 && (
+              <FaceOfDepartmentEEG
+                index={index}
+                setIndex={setIndex}
+                candidate={faceOfDepartmentEEG}
+                setCandidate={setFaceOfDepartmentEEG}
+              />
+            )}
+            {index === 7 && (
+              <FaceOfDepartmentMEG
+                index={index}
+                setIndex={setIndex}
+                candidate={faceOfDepartmentMEG}
+                setCandidate={setFaceOfDepartmentMEG}
+              />
+            )}
+            {index === 8 && (
+              <FaceOfDepartmentMME
+                index={index}
+                setIndex={setIndex}
+                candidate={faceOfDepartmentMME}
+                setCandidate={setFaceOfDepartmentMME}
+              />
+            )}
+            {index === 9 && (
+              <FaceOfDepartmentPGG
+                index={index}
+                setIndex={setIndex}
+                candidate={faceOfDepartmentPGG}
+                setCandidate={setFaceOfDepartmentPGG}
+              />
+            )}
+            {index === 10 && (
+              <FaceOfDepartmentSSG
+                index={index}
+                setIndex={setIndex}
+                candidate={faceOfDepartmentSSG}
+                setCandidate={setFaceOfDepartmentSSG}
+              />
+            )}
+            {index === 11 && (
+              <FaceOfDepartmentSVY
+                index={index}
+                setIndex={setIndex}
+                candidate={faceOfDepartmentSVY}
+                setCandidate={setFaceOfDepartmentSVY}
+              />
+            )}
+            {index === 12 && (
+              <FaceOfYearFour
+                index={index}
+                setIndex={setIndex}
+                candidate={faceOfYearFour}
+                setCandidate={setFaceOfYearFour}
+              />
+            )}
+            {index === 13 && (
+              <FaceOfYearThree
+                index={index}
+                setIndex={setIndex}
+                candidate={faceOfYearThree}
+                setCandidate={setFaceOfYearThree}
+              />
+            )}
+            {/*index === 14 && (
                 <LecturerOfTheYear
                   index={index}
                   setIndex={setIndex}
@@ -327,60 +335,68 @@ const GeneralCategory = () => {
                   setCandidate={setLecturerOfTheYear}
                 />
               )*/}
-          {index === 14 && (
-            <RookieOfTheYear
-              index={index}
-              setIndex={setIndex}
-              candidate={rookieOfTheYear}
-              setCandidate={setRookieOfTheYear}
-            />
-          )}
-          {index === 15 && (
-            <RookieOfTheYearFemale
-              index={index}
-              setIndex={setIndex}
-              candidate={rookieOfTheYearFemale}
-              setCandidate={setRookieOfTheYearFemale}
-            />
-          )}
-          {index === 16 && (
-            <SophomoreOfTheYear
-              index={index}
-              setIndex={setIndex}
-              candidate={sophomoreOfTheYear}
-              setCandidate={setSophomoreOfTheYear}
-            />
-          )}
-          {index === 17 && (
-            <ULESPersonOfTheYearAward
-              index={index}
-              setIndex={setIndex}
-              candidate={ulesPersonOfTheYearAward}
-              setCandidate={setULESPersonOfTheYearAward}
-            />
-          )}
-          {index === 18 && (
-            <ULESTrailblazerAward
-              index={index}
-              setIndex={setIndex}
-              candidate={ulesTrailblazerAward}
-              setCandidate={setULESTrailblazerAward}
-            />
-          )}
-          {index === 19 && (
-            <ULESVolunteerOfTheYearAward
-              index={index}
-              setIndex={setIndex}
-              candidate={ulesVolunteerOfTheYearAward}
-              setCandidate={setULESVolunteerOfTheYearAward}
-              triggerFunction={triggerFunction}
-            />
-          )}
+            {index === 14 && (
+              <RookieOfTheYear
+                index={index}
+                setIndex={setIndex}
+                candidate={rookieOfTheYear}
+                setCandidate={setRookieOfTheYear}
+              />
+            )}
+            {index === 15 && (
+              <RookieOfTheYearFemale
+                index={index}
+                setIndex={setIndex}
+                candidate={rookieOfTheYearFemale}
+                setCandidate={setRookieOfTheYearFemale}
+              />
+            )}
+            {index === 16 && (
+              <SophomoreOfTheYear
+                index={index}
+                setIndex={setIndex}
+                candidate={sophomoreOfTheYear}
+                setCandidate={setSophomoreOfTheYear}
+              />
+            )}
+            {index === 17 && (
+              <ULESPersonOfTheYearAward
+                index={index}
+                setIndex={setIndex}
+                candidate={ulesPersonOfTheYearAward}
+                setCandidate={setULESPersonOfTheYearAward}
+              />
+            )}
+            {index === 18 && (
+              <ULESTrailblazerAward
+                index={index}
+                setIndex={setIndex}
+                candidate={ulesTrailblazerAward}
+                setCandidate={setULESTrailblazerAward}
+              />
+            )}
+            {index === 18 && (
+              <MVPOfTheYear
+                index={index}
+                setIndex={setIndex}
+                candidate={mvpOfTheYear}
+                setCandidate={setMvpOfTheYear}
+              />
+            )}
+            {index === 19 && (
+              <ULESVolunteerOfTheYearAward
+                index={index}
+                setIndex={setIndex}
+                candidate={ulesVolunteerOfTheYearAward}
+                setCandidate={setULESVolunteerOfTheYearAward}
+                triggerFunction={triggerFunction}
+              />
+            )}
+          </div>
         </div>
-      </div>
-      
+
       </main>
-      </>
+    </>
   );
 };
 
