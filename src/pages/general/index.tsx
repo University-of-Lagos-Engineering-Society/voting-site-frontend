@@ -27,6 +27,7 @@ import { useDispatch } from "react-redux";
 import { setGeneral } from "@/redux/checkerSlices/check";
 import SuccessModal from "@/components/modals/SuccessModal";
 import RookieOfTheYearFemale from "@/components/general/RookieOfTheYearFemale";
+import Toast from "react-hot-toast";
 
 type Nominee = {
   _id: string;
@@ -182,7 +183,7 @@ const GeneralCategory = () => {
       dispatch(setGeneral());
       setVoted(true);
     } catch (error: any) {
-    alert(error);
+      alert(error.error);
     }
   };
 
@@ -377,6 +378,7 @@ const GeneralCategory = () => {
           )}
         </div>
       </div>
+      
       </main>
       </>
   );

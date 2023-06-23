@@ -68,7 +68,7 @@ const Card = ({ title, number, to, view, voted }: CardProps) => (
         Voted
       </h3>
     ) : (
-      <div className="text-[#717171]">
+      <div className="text-[#717171]" >
         {view ? "Coming soon" : "Tap to vote"}
       </div>
     )}

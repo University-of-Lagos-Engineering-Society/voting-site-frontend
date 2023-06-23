@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 
-const BASE_URL = "https://ulesvote.onrender.com";
+const BASE_URL = "https://ulawards-2e95d461af2c.herokuapp.com/";
 
 const baseQuery = fetchBaseQuery({
     baseUrl: BASE_URL,

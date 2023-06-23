@@ -145,7 +145,7 @@ const UndergraduateCategory = () => {
       dispatch(setUndergrad());
       setVoted(true);
     } catch (error: any) {
-      alert(error);
+      alert(error.error);
     }
 
 

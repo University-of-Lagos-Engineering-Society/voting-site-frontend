@@ -155,7 +155,7 @@ const GraduateCategory = () => {
           setVoted(true);
         } catch (error: any) {
           console.log(error);
-          alert(error);
+          alert(error.error);
         }
 
   };
