@@ -66,6 +66,7 @@ const UndergraduateCategory = () => {
     useState<Nominee | null>(null);
 
   const triggerFunction = async () => {
+    if (isLoading) return;
     const obj: Record<string, string> = {};
     {
       if (socialiteOfTheYear?.category?._id) {

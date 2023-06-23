@@ -82,6 +82,7 @@ const GeneralCategory = () => {
     useState<Nominee | null>(null);
 
   const triggerFunction = async () => {
+    if (isLoading) return;
     const obj: Record<string, string> = {};
     {
       if (excoBodytOfTheYear?.category) {
