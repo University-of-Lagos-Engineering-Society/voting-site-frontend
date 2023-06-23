@@ -375,7 +375,7 @@ const GeneralCategory = () => {
                 setCandidate={setULESTrailblazerAward}
               />
             )}
-            {index === 18 && (
+            {index === 19 && (
               <MVPOfTheYear
                 index={index}
                 setIndex={setIndex}
@@ -383,7 +383,7 @@ const GeneralCategory = () => {
                 setCandidate={setMvpOfTheYear}
               />
             )}
-            {index === 19 && (
+            {index === 20 && (
               <ULESVolunteerOfTheYearAward
                 index={index}
                 setIndex={setIndex}
