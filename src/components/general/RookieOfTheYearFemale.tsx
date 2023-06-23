@@ -25,7 +25,7 @@ const RookieOfTheYearFemale= ({
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold paris-pro">
           Award : Rookie Of The Year Female
         </h1>
-        <ImageSelectoooor />
+        <ImageSelectoooor image_name="RookieFemale" />
       </div>
 
       <div className="w-full flex flex-col lg:flex-row items-center justify-between">
